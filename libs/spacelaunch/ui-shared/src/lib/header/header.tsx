@@ -7,8 +7,8 @@ export interface HeaderProps {
 }
 
 const StyledHeader = styled(AppBar)(({ theme }) => ({
-  backgroundColor: '#000000',
-  opacity: '0.2',
+  zIndex: '1251',
+  backgroundColor: 'rgba(0, 0, 0, 0.2)',
   height: '100px',
   
   display: 'flex',

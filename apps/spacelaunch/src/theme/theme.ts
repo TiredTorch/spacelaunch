@@ -10,4 +10,14 @@ const theme = createTheme({
 
 theme.typography.fontFamily = 'Montserrat'
 
+theme.components= {
+  MuiCssBaseline: {
+    styleOverrides: {
+      root: {
+        overflowX: 'hidden'
+      }
+    }
+  }
+}
+
 export default theme;

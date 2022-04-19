@@ -1,8 +1,13 @@
-import { Header } from "@spacelaunch/spacelaunch/ui-shared";
+import { Header, Overlay } from "@spacelaunch/spacelaunch/ui-shared";
 
 export function App() {
   return (
-    <Header hasLinkToHome={true}/>
+    <>
+      <Header hasLinkToHome={true}/>
+      <Overlay childrenAlignType={"left"}>
+        hello
+      </Overlay>
+    </>
   );
 }
 
