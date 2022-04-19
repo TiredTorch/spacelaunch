@@ -14,11 +14,11 @@ const StyledHeader = styled(AppBar)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
 
-  paddingLeft: '25%'
+  paddingLeft: '20%'
 }))
 
 const StyledHeaderTitle = styled(Typography)(({ theme }) => ({
-  color: theme.palette.text.secondary,
+  color: theme.palette.text.primary,
   fontSize: '26px',
 }))
 

@@ -1,4 +1,4 @@
-import { Header, Overlay } from "@spacelaunch/spacelaunch/ui-shared";
+import { ContentSection, Footer, Header, Overlay } from "@spacelaunch/spacelaunch/ui-shared";
 
 export function App() {
   return (
@@ -7,6 +7,10 @@ export function App() {
       <Overlay childrenAlignType={"left"}>
         hello
       </Overlay>
+      <ContentSection>
+        ddd
+      </ContentSection>
+      <Footer/>
     </>
   );
 }
