@@ -1,7 +1,8 @@
+import { Header } from "@spacelaunch/spacelaunch/ui-shared";
 
 export function App() {
   return (
-    <h1>dfgdf</h1>
+    <Header hasLinkToHome={true}/>
   );
 }
 
