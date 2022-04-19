@@ -1,5 +1,6 @@
 import { ListItem, Stack, styled, Typography } from "@mui/material";
 import Button from "../../common/button/button";
+import SubtitleBox from "../../common/subtitle-box/subtitle-box";
 
 /* eslint-disable-next-line */
 export interface EventContentProps {}
@@ -26,7 +27,7 @@ export function EventContent(props: EventContentProps) {
         </StyledTypography>
       </StyledListItem>
       <StyledListItem>
-      <Button userSize={"sm"} title={"Dec. 6, 2020, 6:17 p.m."}/>
+        <SubtitleBox title={"Dec. 6, 2020, 6:17 p.m."}/>
       </StyledListItem>
       <StyledListItem>
         <StyledTypography variant="h5">

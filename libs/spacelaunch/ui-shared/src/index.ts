@@ -1,3 +1,4 @@
+export * from './lib/common/subtitle-box/subtitle-box';
 export * from './lib/common/timer/timer';
 export * from './lib/hero/event-content/event-content';
 export * from './lib/hero/rocket-content/rocket-content';
