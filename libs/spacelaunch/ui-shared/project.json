@@ -1,0 +1,23 @@
+{
+  "root": "libs/spacelaunch/ui-shared",
+  "sourceRoot": "libs/spacelaunch/ui-shared/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/spacelaunch/ui-shared/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/spacelaunch/ui-shared"],
+      "options": {
+        "jestConfig": "libs/spacelaunch/ui-shared/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
