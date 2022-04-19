@@ -18,6 +18,17 @@ const theme = createTheme({
 
 theme.typography.fontFamily = 'Montserrat'
 
+theme.typography.h1 = {
+  fontSize: '4.75rem'
+}
+theme.typography.h2 = {
+  fontSize: '1.625rem',
+  fontWeight: 700,
+}
+theme.typography.h5 = {
+  fontSize: '1.063rem'
+}
+
 theme.components= {
   MuiCssBaseline: {
     styleOverrides: {

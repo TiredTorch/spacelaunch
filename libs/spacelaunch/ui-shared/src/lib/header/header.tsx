@@ -19,7 +19,6 @@ const StyledHeader = styled(AppBar)(({ theme }) => ({
 
 const StyledHeaderTitle = styled(Typography)(({ theme }) => ({
   color: theme.palette.text.primary,
-  fontSize: '26px',
 }))
 
 export function Header(props: HeaderProps) {
@@ -27,7 +26,7 @@ export function Header(props: HeaderProps) {
     <StyledHeader>
       
         {props.hasLinkToHome ? (
-          <StyledHeaderTitle>
+          <StyledHeaderTitle variant="h2">
             ← Back to Home
           </StyledHeaderTitle>
         ) : 

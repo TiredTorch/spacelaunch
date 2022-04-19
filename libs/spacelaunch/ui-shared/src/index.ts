@@ -1,3 +1,4 @@
+export * from './lib/common/timer/timer';
 export * from './lib/hero/event-content/event-content';
 export * from './lib/hero/rocket-content/rocket-content';
 export * from './lib/hero/launch-content/launch-content';

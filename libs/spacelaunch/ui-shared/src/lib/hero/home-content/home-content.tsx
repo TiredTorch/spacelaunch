@@ -17,7 +17,7 @@ export function HomeContent(props: HomeContentProps) {
         </Typography>
       </ListItem>
       <ListItem>
-        <Typography variant="h5">
+        <Typography variant="h2">
           View all launches available - including launches from the past and utilize powerful search filters.
         </Typography>
       </ListItem>

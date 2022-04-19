@@ -1,5 +1,5 @@
 import { ListItem, Stack, styled, Typography } from "@mui/material";
-import Button from "../../common/button/button";
+import Timer from "../../common/timer/timer";
 
 /* eslint-disable-next-line */
 export interface LaunchContentProps {}
@@ -26,9 +26,12 @@ export function LaunchContent(props: LaunchContentProps) {
         </StyledTypography>
       </StyledListItem>
       <StyledListItem>
-        <StyledTypography variant="h5">
-          View all launches available - including launches from the past and utilize powerful search filters.
+        <StyledTypography variant="h2">
+          Go for launch
         </StyledTypography>
+      </StyledListItem>
+      <StyledListItem>
+        <Timer/>
       </StyledListItem>
     </StyledStack>
   );
