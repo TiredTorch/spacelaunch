@@ -6,6 +6,8 @@ export interface ContentSectionProps {
 }
 
 const StyledStack = styled(Stack)(({ theme }) => ({
+  position: 'relative',
+  top: '-120px',
   width: '75vw',
   margin: 'auto',
   padding: '10%',

@@ -10,6 +10,9 @@ const theme = createTheme({
       main: '#181B48',
       light: '#1C2056'
     }
+  },
+  typography: {
+    fontFamily: 'Montserrat'
   }
 })
 

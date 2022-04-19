@@ -3,14 +3,13 @@ import { Box, styled } from "@mui/material";
 /* eslint-disable-next-line */
 export interface OverlayProps {
   children: React.ReactNode
-  childrenAlignType: 'left' | 'center'
 }
 
 const StyledContainer = styled(Box)(({ theme }) => ({
   maxWidth: '100vw',
   height: '1080px',
-  padding: '330px 25vw',
-  background: 'linear-gradient(180deg, #302B63 21.88%, rgba(24, 27, 72, 0.71) 90.1%)'
+  padding: '300px 18vw',
+  background: 'linear-gradient(180deg, #302B63 21.88%, rgba(24, 27, 72, 0.71) 90.1%)',
 }))
 const StyledImgContainer = styled(Box)(({ theme }) => ({
   position: 'absolute',
