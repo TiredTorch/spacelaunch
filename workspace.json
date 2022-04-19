@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "spacelaunch": "apps/spacelaunch",
+    "spacelaunch-e2e": "apps/spacelaunch-e2e"
+  }
 }

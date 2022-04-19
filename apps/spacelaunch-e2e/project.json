@@ -1,0 +1,28 @@
+{
+  "root": "apps/spacelaunch-e2e",
+  "sourceRoot": "apps/spacelaunch-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/spacelaunch-e2e/cypress.json",
+        "devServerTarget": "spacelaunch:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "spacelaunch:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/spacelaunch-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["spacelaunch"]
+}
