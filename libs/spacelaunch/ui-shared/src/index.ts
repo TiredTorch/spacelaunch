@@ -1,3 +1,7 @@
+export * from './lib/content/rocket-section/rocket-section';
+export * from './lib/content/launch-section/launch-section';
+export * from './lib/content/event-section/event-section';
+export * from './lib/content/home-section/home-section';
 export * from './lib/common/subtitle-box/subtitle-box';
 export * from './lib/common/timer/timer';
 export * from './lib/hero/event-content/event-content';
