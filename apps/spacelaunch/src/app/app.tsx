@@ -1,16 +1,8 @@
-import { ContentSection, EventContent, Footer, Header, HomeContent, LaunchContent, Overlay, RocketContent } from "@spacelaunch/spacelaunch/ui-shared";
+import { Routes } from "@spacelaunch/spacelaunch/routes-shared";
 
 export function App() {
   return (
-    <>
-      <Header hasLinkToHome={true}/>
-      <Overlay>
-        <HomeContent/>
-      </Overlay>
-      <ContentSection>
-      </ContentSection>
-      <Footer/>
-    </>
+    <Routes/>
   );
 }
 
