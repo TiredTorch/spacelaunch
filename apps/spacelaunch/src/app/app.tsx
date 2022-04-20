@@ -1,9 +1,9 @@
-import { Routes } from "@spacelaunch/spacelaunch/routes-shared";
+import { Routes } from '@spacelaunch/spacelaunch/routes-shared';
 
 export function App() {
-  return (
-    <Routes/>
-  );
+	return (
+		<Routes/>
+	);
 }
 
 export default App;

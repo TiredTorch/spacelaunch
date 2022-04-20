@@ -1,7 +1,11 @@
-import { ContentSection, Footer, Header, HomeContent, Overlay } from "@spacelaunch/spacelaunch/ui-shared";
-import { FC } from "react";
+import { FC } from 'react';
+import { 
+	ContentSection, 
+	Footer, 
+	Header, 
+	Overlay 
+} from '@spacelaunch/spacelaunch/ui-shared';
 
-/* eslint-disable-next-line */
 export interface SpacelaunchLayoutProps {
   heroComponent: FC,
   contentComponent: FC,
@@ -11,18 +15,18 @@ export interface SpacelaunchLayoutProps {
 }
 
 export function SpacelaunchLayout(props: SpacelaunchLayoutProps) {
-  return (
-    <>
-      <Header hasLinkToHome={props.settings.hasHeaderLink}/>
-        <Overlay>
-          <props.heroComponent/>
-        </Overlay>
-        <ContentSection>
-          <props.contentComponent/>
-        </ContentSection>
-        <Footer/>
-    </>
-  );
+	return (
+		<>
+			<Header hasLinkToHome={props.settings.hasHeaderLink}/>
+			<Overlay>
+				<props.heroComponent/>
+			</Overlay>
+			<ContentSection>
+				<props.contentComponent/>
+			</ContentSection>
+			<Footer/>
+		</>
+	);
 }
 
 export default SpacelaunchLayout;
