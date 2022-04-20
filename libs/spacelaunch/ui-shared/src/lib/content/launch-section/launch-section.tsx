@@ -75,7 +75,7 @@ export function LaunchSection(props: LaunchSectionProps) {
         <Typography variant="h5" align="center" margin={'20px 0'} padding={'0 200px'}>
           Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit. The Block 5 variant is the fifth major interval aimed at improving upon the ability for rapid reusability.
         </Typography>
-        <Button userSize={"md"} title={"See Rocket Details"} url={"/rocker/1"}/>
+        <Button userSize={"md"} title={"See Rocket Details"} url={"/rocket/1"}/>
       </StyledStack>
       <CardMedia
         component={'iframe'} 

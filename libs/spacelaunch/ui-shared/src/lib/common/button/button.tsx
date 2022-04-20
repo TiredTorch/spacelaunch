@@ -30,7 +30,7 @@ const StyledButtonMD = styled(StyledButton)({
 })
 
 const StyledButtonSM = styled(StyledButton)({
-  padding: '10px 30px',
+  padding: '10px 20px',
   width: '256px',
   height: '38px',
   background: 'linear-gradient(94.97deg, #8E2DE2 3.92%, #4A00E0 52.92%)',
@@ -48,7 +48,7 @@ export function Button(props: ButtonProps) {
     case 'sm':
       return (
         <StyledButtonSM variant="contained">
-          <StyledTypography fontSize='18px' fontWeight={500}>
+          <StyledTypography fontSize='20px' fontWeight={500}>
             {props.title}
           </StyledTypography>
         </StyledButtonSM>
