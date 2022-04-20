@@ -22,7 +22,7 @@ export function Logo(props: LogoProps) {
         break;
     }
   
-  }, [])
+  }, [props.logoSize])
   
 
   return (

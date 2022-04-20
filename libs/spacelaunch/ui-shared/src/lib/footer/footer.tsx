@@ -13,8 +13,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
   alignItems: 'center'
 }))
 const StyledCopyrights = styled(Typography)(({ theme }) => ({
-  color: theme.palette.text.secondary,
-  fontSize: '17px',
+  color: theme.palette.text.secondary
 }))
 
 export function Footer(props: FooterProps) {
@@ -24,7 +23,7 @@ export function Footer(props: FooterProps) {
         logoSize='sm'
         src="https://www.pngmart.com/files/16/official-Google-Logo-PNG-Image.png"
       />
-      <StyledCopyrights>
+      <StyledCopyrights variant="h5">
         © 2021 Copyright
       </StyledCopyrights>
     </StyledBox>

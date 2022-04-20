@@ -1,5 +1,6 @@
 import { AppBar, Typography } from "@mui/material";
 import { styled } from "@mui/material";
+import { Link } from "react-router-dom";
 
 /* eslint-disable-next-line */
 export interface HeaderProps {
@@ -19,17 +20,21 @@ const StyledHeader = styled(AppBar)(({ theme }) => ({
 
 const StyledHeaderTitle = styled(Typography)(({ theme }) => ({
   color: theme.palette.text.primary,
-  fontSize: '26px',
 }))
 
 export function Header(props: HeaderProps) {
+
+  
   return (
     <StyledHeader>
       
         {props.hasLinkToHome ? (
-          <StyledHeaderTitle>
-            ← Back to Home
-          </StyledHeaderTitle>
+          <Link to="/" style={{ textDecoration: 'none'}}>
+            <StyledHeaderTitle variant="h2">
+              ← Back to Home
+            </StyledHeaderTitle>
+          </Link>
+          
         ) : 
           ''
         }

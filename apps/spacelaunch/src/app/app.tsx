@@ -1,17 +1,8 @@
-import { ContentSection, Footer, Header, Overlay } from "@spacelaunch/spacelaunch/ui-shared";
+import { Routes } from "@spacelaunch/spacelaunch/routes-shared";
 
 export function App() {
   return (
-    <>
-      <Header hasLinkToHome={true}/>
-      <Overlay childrenAlignType={"left"}>
-        hello
-      </Overlay>
-      <ContentSection>
-        ddd
-      </ContentSection>
-      <Footer/>
-    </>
+    <Routes/>
   );
 }
 

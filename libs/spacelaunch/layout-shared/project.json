@@ -1,0 +1,25 @@
+{
+  "root": "libs/spacelaunch/layout-shared",
+  "sourceRoot": "libs/spacelaunch/layout-shared/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/spacelaunch/layout-shared/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/spacelaunch/layout-shared"],
+      "options": {
+        "jestConfig": "libs/spacelaunch/layout-shared/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

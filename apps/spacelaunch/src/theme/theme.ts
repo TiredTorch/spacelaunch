@@ -10,10 +10,28 @@ const theme = createTheme({
       main: '#181B48',
       light: '#1C2056'
     }
+  },
+  typography: {
+    fontFamily: 'Montserrat'
   }
 })
 
 theme.typography.fontFamily = 'Montserrat'
+
+theme.typography.h1 = {
+  fontSize: '4.75rem'
+}
+theme.typography.h2 = {
+  fontSize: '1.625rem',
+  fontWeight: 700,
+}
+theme.typography.h3 = {
+  fontSize: '3.375rem',
+  fontWeight: 700,
+}
+theme.typography.h5 = {
+  fontSize: '1.063rem'
+}
 
 theme.components= {
   MuiCssBaseline: {
