@@ -1,11 +1,21 @@
+import { Stack, styled } from "@mui/material";
+
 /* eslint-disable-next-line */
 export interface LaunchSectionProps {}
 
+const StyledStack = styled(Stack)({
+  
+})
+
 export function LaunchSection(props: LaunchSectionProps) {
   return (
-    <div>
-      <h1>Welcome to LaunchSection!</h1>
-    </div>
+    <StyledStack>
+      <div className="video">fff</div>
+      <StyledStack>
+        desc
+      </StyledStack>
+      <div className="map">dsfsd</div>
+    </StyledStack>
   );
 }
 

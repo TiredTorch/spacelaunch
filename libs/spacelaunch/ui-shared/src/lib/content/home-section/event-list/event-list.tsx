@@ -43,17 +43,17 @@ export function EventList(props: EventListProps) {
       </StyledStackRow>
       <StyledStackRow>
         <EventListItem 
-          url={""} 
+          url={"/event/1"} 
           dataTitle={"Dec. 6, 2020, 6:17 p.m."} 
           eventTitle={"Falcon 9 Block 5 | Dragon CRS-2 SpX-21"}
         />
         <EventListItem 
-          url={""} 
+          url={"/event/1"} 
           dataTitle={"Dec. 6, 2020, 6:17 p.m."} 
           eventTitle={"Falcon 9 Block 5 | Dragon CRS-2 SpX-21"}
         />
         <EventListItem 
-          url={""} 
+          url={"/event/1"} 
           dataTitle={"Dec. 6, 2020, 6:17 p.m."} 
           eventTitle={"Falcon 9 Block 5 | Dragon CRS-2 SpX-21"}
         />
