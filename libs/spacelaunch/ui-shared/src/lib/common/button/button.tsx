@@ -1,10 +1,12 @@
 import { styled, Typography } from "@mui/material";
 import { Button as MUIButton } from "@mui/material";
+import { useNavigate } from "react-router";
 
 /* eslint-disable-next-line */
 export interface ButtonProps {
   userSize: 'sm' | 'md',
-  title: string
+  title: string,
+  url: string
 }
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
@@ -36,6 +38,11 @@ const StyledButtonSM = styled(StyledButton)({
 
 
 export function Button(props: ButtonProps) {
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate(props.url);
+  } 
 
   switch (props.userSize) {
     case 'sm':
@@ -49,7 +56,7 @@ export function Button(props: ButtonProps) {
 
     case 'md':
       return (
-        <StyledButtonMD variant="contained">
+        <StyledButtonMD variant="contained" onClick={handleRedirect}>
         <StyledTypography fontSize='20px' fontWeight={700}>
           {props.title}
         </StyledTypography>

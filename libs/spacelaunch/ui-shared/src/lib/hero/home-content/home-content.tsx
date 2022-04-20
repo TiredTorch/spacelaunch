@@ -22,7 +22,7 @@ export function HomeContent(props: HomeContentProps) {
         </Typography>
       </ListItem>
       <ListItem>
-        <Button userSize="md" title="Show All Launches"/>
+        <Button userSize="md" title="Show All Launches" url="/launch/1"/>
       </ListItem>
     </StyledStack>
   );

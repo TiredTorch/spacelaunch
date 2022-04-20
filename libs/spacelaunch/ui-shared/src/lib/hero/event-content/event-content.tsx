@@ -35,7 +35,7 @@ export function EventContent(props: EventContentProps) {
         </StyledTypography>
       </StyledListItem>
       <StyledListItem>
-        <Button userSize={"md"} title={"Read On Site"}/>
+        <Button userSize={"md"} title={"Read On Site"} url={"/"}/>
       </StyledListItem>
     </StyledStack>
   );
