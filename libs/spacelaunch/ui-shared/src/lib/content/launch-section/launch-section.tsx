@@ -1,7 +1,8 @@
 import { CardMedia, ListItem, Stack, styled, Typography } from "@mui/material";
 import Button from "../../common/button/button";
 import SubtitleBox from "../../common/subtitle-box/subtitle-box";
-import InfoString from "./info-string/info-string";
+import VideoPlayer from "../../common/video-player/video-player";
+import InfoString from "../../common/info-string/info-string";
 
 /* eslint-disable-next-line */
 export interface LaunchSectionProps {}
@@ -31,17 +32,7 @@ const SubtitleItem = styled(ListItem)({
 export function LaunchSection(props: LaunchSectionProps) {
   return (
     <StyledStack>
-      <CardMedia 
-        component={'iframe'} 
-        src='https://www.youtube.com/embed/wxiT4CkO7CQ'
-        loading="lazy"
-        sx={{
-          margin: 'auto',
-          width: '1180px',
-          height: '711px',
-          border: 'none'
-        }}
-      />
+      <VideoPlayer videoSrc={"https://www.youtube.com/embed/wxiT4CkO7CQ"}/>
       <StyledStack>
         <Typography variant="h3">
           Overview
