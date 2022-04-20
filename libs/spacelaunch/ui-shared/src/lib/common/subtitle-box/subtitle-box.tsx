@@ -10,8 +10,9 @@ const StyledChip = styled(Chip)(({ theme }) => ({
   padding: '10px 30px',
   borderRadius: '50px',
 
+  width: '256px',
   fontStyle: 'italic',
-  fontSize: theme.typography.h5.fontSize
+  fontSize: theme.typography.h5.fontSize,
 }));
 
 export function SubtitleBox(props: SubtitleBoxProps) {

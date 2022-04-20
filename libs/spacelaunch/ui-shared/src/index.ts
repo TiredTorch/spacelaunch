@@ -1,3 +1,5 @@
+export * from './lib/content/home-section/launches-list/launches-list';
+export * from './lib/content/home-section/event-list/event-list';
 export * from './lib/content/rocket-section/rocket-section';
 export * from './lib/content/launch-section/launch-section';
 export * from './lib/content/event-section/event-section';

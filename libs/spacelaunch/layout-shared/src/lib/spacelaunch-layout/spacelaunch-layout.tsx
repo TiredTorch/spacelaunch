@@ -4,18 +4,21 @@ import { FC } from "react";
 /* eslint-disable-next-line */
 export interface SpacelaunchLayoutProps {
   heroComponent: FC,
-  contentCompnent: FC
+  contentComponent: FC,
+  settings: {
+    hasHeaderLink : boolean
+  }
 }
 
 export function SpacelaunchLayout(props: SpacelaunchLayoutProps) {
   return (
     <>
-      <Header hasLinkToHome={true}/>
+      <Header hasLinkToHome={props.settings.hasHeaderLink}/>
         <Overlay>
           <props.heroComponent/>
         </Overlay>
         <ContentSection>
-          <props.contentCompnent/>
+          <props.contentComponent/>
         </ContentSection>
         <Footer/>
     </>

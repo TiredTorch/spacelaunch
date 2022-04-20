@@ -17,8 +17,11 @@ export function Routes(props: RoutesProps) {
               key={`route ${route.path}`}
               element={
                 <SpacelaunchLayout 
-                  heroComponent={route.heroComponent} 
-                  contentCompnent={route.contentCompnent}
+                  heroComponent={route.heroComponent}
+                  contentComponent={route.contentCompnent} 
+                  settings={{
+                    hasHeaderLink: !(route.path === '/')
+                  }}
                 />
               }
             />

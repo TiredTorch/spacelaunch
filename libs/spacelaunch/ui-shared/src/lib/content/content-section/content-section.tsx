@@ -10,7 +10,7 @@ const StyledStack = styled(Stack)(({ theme }) => ({
   top: '-120px',
   width: '75vw',
   margin: 'auto',
-  padding: '10%',
+  padding: '4%',
   backgroundColor: theme.palette.primary.light
 }))
 
