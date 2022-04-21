@@ -1,9 +1,9 @@
-export interface Status {
+ interface Status {
   id: number;
   name: string;
 }
 
-export interface LaunchServiceProvider {
+ interface LaunchServiceProvider {
   id: number;
   url: string;
   name: string;
@@ -27,7 +27,7 @@ export interface LaunchServiceProvider {
   nation_url: string;
 }
 
-export interface Configuration {
+ interface Configuration {
   id: number;
   launch_library_id: number;
   url: string;
@@ -54,7 +54,7 @@ export interface Configuration {
   wiki_url: string;
 }
 
-export interface Launcher {
+ interface Launcher {
   id: number;
   url: string;
   details: string;
@@ -65,19 +65,19 @@ export interface Launcher {
   image_url: string;
 }
 
-export interface Location {
+ interface Location {
   name: string;
   abbrev: string;
   description: string;
 }
 
-export interface Type {
+ interface Type {
   name: string;
   abbrev: string;
   description: string;
 }
 
-export interface Landing {
+ interface Landing {
   attempt: boolean;
   success?: any;
   description: string;
@@ -85,7 +85,7 @@ export interface Landing {
   type: Type;
 }
 
-export interface LauncherStage {
+ interface LauncherStage {
   type: string;
   reused?: boolean;
   launcher_flight_number: number;
@@ -93,24 +93,24 @@ export interface LauncherStage {
   landing: Landing;
 }
 
-export interface Status2 {
+ interface Status2 {
   id: number;
   name: string;
 }
 
-export interface Type2 {
+ interface Type2 {
   id: number;
   name: string;
 }
 
-export interface Agency {
+ interface Agency {
   id: number;
   url: string;
   name: string;
   type: string;
 }
 
-export interface Astronaut {
+ interface Astronaut {
   id: number;
   url: string;
   name: string;
@@ -127,29 +127,29 @@ export interface Astronaut {
   wiki: string;
 }
 
-export interface LaunchCrew {
+ interface LaunchCrew {
   role: string;
   astronaut: Astronaut;
 }
 
-export interface Status3 {
+ interface Status3 {
   id: number;
   name: string;
 }
 
-export interface Type3 {
+ interface Type3 {
   id: number;
   name: string;
 }
 
-export interface Agency2 {
+ interface Agency2 {
   id: number;
   url: string;
   name: string;
   type: string;
 }
 
-export interface Astronaut2 {
+ interface Astronaut2 {
   id: number;
   url: string;
   name: string;
@@ -166,29 +166,29 @@ export interface Astronaut2 {
   wiki: string;
 }
 
-export interface LandingCrew {
+ interface LandingCrew {
   role: string;
   astronaut: Astronaut2;
 }
 
-export interface Status4 {
+ interface Status4 {
   id: number;
   name: string;
 }
 
-export interface Type4 {
+ interface Type4 {
   id: number;
   name: string;
 }
 
-export interface Agency3 {
+ interface Agency3 {
   id: number;
   url: string;
   name: string;
   type: string;
 }
 
-export interface SpacecraftConfig {
+ interface SpacecraftConfig {
   id: number;
   url: string;
   name: string;
@@ -211,7 +211,7 @@ export interface SpacecraftConfig {
   info_link: string;
 }
 
-export interface Spacecraft {
+ interface Spacecraft {
   id: number;
   url: string;
   name: string;
@@ -221,7 +221,7 @@ export interface Spacecraft {
   spacecraft_config: SpacecraftConfig;
 }
 
-export interface SpacecraftStage {
+ interface SpacecraftStage {
   id: number;
   url: string;
   mission_end?: any;
@@ -233,13 +233,13 @@ export interface SpacecraftStage {
   docking_events: any[];
 }
 
-export interface Rocket {
+ interface Rocket {
   configuration: Configuration;
   launcher_stage: LauncherStage[];
   spacecraft_stage: SpacecraftStage;
 }
 
-export interface Mission {
+ interface Mission {
   id: number;
   launch_library_id?: number;
   name: string;
@@ -249,13 +249,13 @@ export interface Mission {
   orbit_abbrev: string;
 }
 
-export interface Location2 {
+ interface Location2 {
   id: number;
   name: string;
   country_code: string;
 }
 
-export interface Pad {
+ interface Pad {
   id: number;
   agency_id?: number;
   name: string;
@@ -267,7 +267,7 @@ export interface Pad {
   location: Location2;
 }
 
-export interface Result {
+ interface Result {
   id: string;
   url: string;
   launch_library_id?: number;
@@ -296,7 +296,7 @@ export interface Result {
 
 export interface UpcomingLaunches {
   count: number;
-  next: string;
+  next?: string;
   previous?: any;
   results: Result[];
 }

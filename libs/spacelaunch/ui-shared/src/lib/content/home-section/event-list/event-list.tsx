@@ -30,7 +30,7 @@ export function EventList(props: EventListProps) {
 	// eslint-disable-next-line 
 	const { data, isLoading, error } = useGetUpcomingLaunchesQuery();
 
-	console.log(data?.results[0].id);
+	const currentEventListItems = data?.results.slice(0, 3);
 
 	return (
 		<StyledStackColumn>
@@ -52,21 +52,15 @@ export function EventList(props: EventListProps) {
 				</StyledStackRow>
 			</StyledStackRow>
 			<StyledStackRow>
-				<EventListItem 
-					url={'/event/1'} 
-					dataTitle={'Dec. 6, 2020, 6:17 p.m.'} 
-					eventTitle={'Falcon 9 Block 5 | Dragon CRS-2 SpX-21'}
-				/>
-				<EventListItem 
-					url={'/event/1'} 
-					dataTitle={'Dec. 6, 2020, 6:17 p.m.'} 
-					eventTitle={'Falcon 9 Block 5 | Dragon CRS-2 SpX-21'}
-				/>
-				<EventListItem 
-					url={'/event/1'} 
-					dataTitle={'Dec. 6, 2020, 6:17 p.m.'} 
-					eventTitle={'Falcon 9 Block 5 | Dragon CRS-2 SpX-21'}
-				/>
+				{currentEventListItems?.map((item) => (
+					<EventListItem
+						url={`/event/${item.id}`}
+						dataTitle={item.net}
+						eventTitle={item.name}
+						key={`event ${item.id}`} 
+						img={item.image_url}					
+					/>
+				))}
 			</StyledStackRow>
 		</StyledStackColumn>
 	);

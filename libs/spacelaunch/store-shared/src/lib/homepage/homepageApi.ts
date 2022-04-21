@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { UpcomingLaunches } from './homepageTypes';
+import { UpcomingEvents } from './homepageEventTypes';
+import { UpcomingLaunches } from './homepageLaunchTypes';
 
 export const homepageApi = createApi({
 	reducerPath: 'api/homepage',
@@ -8,9 +9,15 @@ export const homepageApi = createApi({
 	}),
 	endpoints: build => ({
 		getUpcomingLaunches: build.query<UpcomingLaunches, void>({ 
-			query: () => 'launch/upcoming?mode=detailed'
+			query: () => 'launch/upcoming?limit=12&mode=detailed'
+		}),
+		getUpcomingEvents: build.query<UpcomingEvents, void>({
+			query: () => 'event/upcoming/?limit=12&mode=detailed'
 		})
 	})
 });
 
-export const { useGetUpcomingLaunchesQuery } = homepageApi;
+export const { 
+	useGetUpcomingLaunchesQuery, 
+	useGetUpcomingEventsQuery 
+} = homepageApi;
