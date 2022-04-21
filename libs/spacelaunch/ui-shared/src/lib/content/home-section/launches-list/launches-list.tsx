@@ -1,6 +1,6 @@
 import { Box, styled, Typography } from '@mui/material';
 import { 
-	useGetUpcomingEventsQuery 
+	useGetUpcomingLaunchesQuery 
 } from 'libs/spacelaunch/store-shared/src/lib/homepage/homepageApi';
 import LaunchListItem from './launch-list-item/launch-list-item';
 
@@ -16,7 +16,7 @@ export function LaunchesList() {
 
   
 	// eslint-disable-next-line 
-	const { data, isLoading, error } = useGetUpcomingEventsQuery();
+	const { data, isLoading, error } = useGetUpcomingLaunchesQuery();
   
 	const currentLaunchListItems = data?.results.slice(0, 6);
 
@@ -28,10 +28,10 @@ export function LaunchesList() {
 			{currentLaunchListItems?.map((item) => (
 				<LaunchListItem 
 					url={`/launch/${item.id}`}
-					dataTitle={item.date}
+					dataTitle={item.net}
 					launchTitle={item.name}
 					key={`route ${item.id}`} 
-					img={item.feature_image}		
+					img={item.image_url}		
 				/>
 			))}
 		</StyledBox>

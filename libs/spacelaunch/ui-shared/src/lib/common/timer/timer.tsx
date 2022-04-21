@@ -1,26 +1,28 @@
-import { Box, styled, Typography } from "@mui/material";
+import { Box, styled, Typography } from '@mui/material';
 
 /* eslint-disable-next-line */
-export interface TimerProps {}
+export interface TimerProps {
+  time: string | undefined
+}
 
-const StyledBox = styled(Box)(({ theme }) => ({
-  width: '40vw',
-  height: '200px',
-  background: '#4A00E0',
+const StyledBox = styled(Box)(() => ({
+	width: '40vw',
+	height: '200px',
+	background: '#4A00E0',
 
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
-}))
+	display: 'flex',
+	justifyContent: 'center',
+	alignItems: 'center'
+}));
 
 export function Timer(props: TimerProps) {
-  return (
-    <StyledBox>
-      <Typography variant="h1">
-        00:00:27:41
-      </Typography>
-    </StyledBox>
-  );
+	return (
+		<StyledBox>
+			<Typography variant="h1" align='center'>
+				{props.time??'Not found'}
+			</Typography>
+		</StyledBox>
+	);
 }
 
 export default Timer;

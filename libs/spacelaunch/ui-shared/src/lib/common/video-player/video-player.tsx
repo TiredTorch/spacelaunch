@@ -1,7 +1,7 @@
 import { CardMedia } from '@mui/material';
 
 export interface VideoPlayedProps {
-  videoSrc: string
+  videoSrc: string 
 }
 
 export function VideoPlayer(props: VideoPlayedProps) {

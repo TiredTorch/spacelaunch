@@ -3,9 +3,10 @@ import Button from '../../common/button/button';
 import SubtitleBox from '../../common/subtitle-box/subtitle-box';
 import VideoPlayer from '../../common/video-player/video-player';
 import InfoString from '../../common/info-string/info-string';
-
-/* eslint-disable-next-line */
-export interface LaunchSectionProps {}
+import { 
+	useGetLaunchQuery 
+} from 'libs/spacelaunch/store-shared/src/lib/launchpage/launchpageApi';
+import { useParams } from 'react-router';
 
 const StyledStack = styled(Stack)({
 	margin: '30px 0',
@@ -29,16 +30,31 @@ const SubtitleItem = styled(ListItem)({
 	alignItems: 'center'
 });
 
-export function LaunchSection(props: LaunchSectionProps) {
+export function LaunchSection() {
+
+	const { id } = useParams();
+	const { data } = useGetLaunchQuery(`${id}`);
+
 	return (
 		<StyledStack>
-			<VideoPlayer videoSrc={'https://www.youtube.com/embed/wxiT4CkO7CQ'}/>
+			{data?.vidURLs?.length ? 
+				<VideoPlayer videoSrc={data?.vidURLs[0].url}/> : ''
+			}
 			<StyledStack>
 				<Typography variant="h3">
           Overview
 				</Typography>
-				<InfoString title={'Destination'} info={'Low Earth Orbit'}/>
-				<InfoString title={'Mission'} info={'Resupply'}/>
+				<InfoString 
+					title={'Destination'} 
+					info={
+						data?.rocket?.spacecraft_stage ? 
+							data?.rocket?.spacecraft_stage.destination :
+							'-'
+					}
+				/>
+				<InfoString title={'Mission'} info={
+					data?.mission.type??'-'
+				}/>
 				<SubtitleWrapper>
 					<SubtitleItem>
 						<SubtitleBox title={'Text'}/>
@@ -52,21 +68,31 @@ export function LaunchSection(props: LaunchSectionProps) {
 					<SubtitleItem>
 						<SubtitleBox title={'Text'}/>
 					</SubtitleItem>
-					<Typography variant="h5" align="center" marginTop={'20px'}>
-            SpaceX will launch the first cargo variant of its Dragon 2 spacecraft on their 21st commercial resupply services mission to the International Space Station. The flight will be conducted under the second Commercial Resupply Services contract with NASA. Dragon will be filled with supplies and payloads, including critical materials to directly support more than 250 science and research investigations that occur onboard the orbiting laboratory.
+					<Typography variant="h5" 
+						align="center" marginTop={'20px'} width={'100%'}>
+						{data?.mission.description??'Not found'}
 					</Typography>
 				</SubtitleWrapper>
 			</StyledStack>
 			<StyledStack>
 				<Typography variant="h3">
-          Falcon 9 Block 5
+					{data?.rocket.configuration.full_name??'Not found'}
 				</Typography>
-				<InfoString title={'Family'} info={'Falcon'}/>
-				<InfoString title={'Configuration'} info={'Block 5'}/>
-				<Typography variant="h5" align="center" margin={'20px 0'} padding={'0 200px'}>
-          Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit. The Block 5 variant is the fifth major interval aimed at improving upon the ability for rapid reusability.
+				<InfoString title={'Family'} info={
+					data?.rocket.configuration.family??'-'
+				}/>
+				<InfoString title={'Configuration'} info={
+					data?.rocket.configuration.name??'-'
+				}/>
+				<Typography variant="h5" 
+					align="center" margin={'20px 0'} padding={'0 200px'}
+				>
+					{data?.rocket.configuration.description??'Not found'}
 				</Typography>
-				<Button userSize={'md'} title={'See Rocket Details'} url={'/rocket/1'}/>
+				<Button userSize={'md'} 
+					title={'See Rocket Details'} 
+					url={`/rocket/${data?.rocket.configuration.id}`}
+				/>
 			</StyledStack>
 			<CardMedia
 				component={'iframe'} 
