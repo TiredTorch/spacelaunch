@@ -4,17 +4,14 @@ import {
 	LaunchSection 
 } from '@spacelaunch/spacelaunch/ui-shared';
 
-/* eslint-disable-next-line */
-export interface LaunchPageProps {}
-
-// eslint-disable-next-line no-unused-vars
-export function LaunchPage(props: LaunchPageProps) {
+export function LaunchPage() {
 	return (
 		<SpacelaunchLayout 
 			heroComponent={LaunchContent} 
 			contentComponent={LaunchSection} 
 			settings={{
-				hasHeaderLink: false
+				hasHeaderLink: true,
+				bg: null
 			}}/>
 	);
 }

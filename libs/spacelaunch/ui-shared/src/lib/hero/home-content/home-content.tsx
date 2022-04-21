@@ -1,15 +1,11 @@
 import { ListItem, Stack, styled, Typography } from '@mui/material';
 import Button from '../../common/button/button';
 
-/* eslint-disable-next-line */
-export interface HomeContentProps {}
-
 const StyledStack = styled(Stack)({
 
 });
 
-// eslint-disable-next-line no-unused-vars
-export function HomeContent(props: HomeContentProps) {
+export function HomeContent() {
 	return (
 		<StyledStack spacing='30px'>
 			<ListItem>
@@ -27,7 +23,7 @@ export function HomeContent(props: HomeContentProps) {
 				<Button 
 					userSize="md"  
 					title="Show All Launches" 
-					url="/launch/1"
+					url="/"
 				/>
 			</ListItem>
 		</StyledStack>

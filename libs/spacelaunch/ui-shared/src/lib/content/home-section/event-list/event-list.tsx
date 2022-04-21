@@ -1,6 +1,6 @@
 import { Button, Stack, styled, Typography } from '@mui/material';
 import { 
-	useGetUpcomingLaunchesQuery 
+	useGetUpcomingEventsQuery,
 } from 'libs/spacelaunch/store-shared/src/lib/homepage/homepageApi';
 import EventListItem from './event-list-item/event-list-item';
 
@@ -28,7 +28,7 @@ const StyledArrowButton = styled(Button)({
 export function EventList(props: EventListProps) {
 
 	// eslint-disable-next-line 
-	const { data, isLoading, error } = useGetUpcomingLaunchesQuery();
+	const { data, isLoading, error } = useGetUpcomingEventsQuery();
 
 	const currentEventListItems = data?.results.slice(0, 3);
 
@@ -55,10 +55,10 @@ export function EventList(props: EventListProps) {
 				{currentEventListItems?.map((item) => (
 					<EventListItem
 						url={`/event/${item.id}`}
-						dataTitle={item.net}
+						dataTitle={item.date}
 						eventTitle={item.name}
 						key={`event ${item.id}`} 
-						img={item.image_url}					
+						img={item.feature_image}					
 					/>
 				))}
 			</StyledStackRow>

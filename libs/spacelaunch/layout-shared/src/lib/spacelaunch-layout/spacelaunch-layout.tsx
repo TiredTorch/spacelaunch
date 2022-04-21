@@ -11,6 +11,7 @@ export interface SpacelaunchLayoutProps {
   contentComponent: FC,
   settings: {
     hasHeaderLink : boolean
+		bg: string | null | undefined
   }
 }
 
@@ -18,7 +19,7 @@ export function SpacelaunchLayout(props: SpacelaunchLayoutProps) {
 	return (
 		<>
 			<Header hasLinkToHome={props.settings.hasHeaderLink}/>
-			<Overlay>
+			<Overlay bg={props.settings.bg}>
 				<props.heroComponent/>
 			</Overlay>
 			<ContentSection>

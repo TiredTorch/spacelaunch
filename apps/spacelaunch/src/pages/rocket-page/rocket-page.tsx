@@ -14,7 +14,8 @@ export function RocketPage(props: RocketPageProps) {
 			heroComponent={RocketContent} 
 			contentComponent={RocketSection} 
 			settings={{
-				hasHeaderLink: false
+				hasHeaderLink: true,
+				bg: null
 			}}/>
 	);
 }
