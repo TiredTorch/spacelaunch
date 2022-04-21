@@ -1,8 +1,8 @@
-import { FC, lazy } from 'react';
+import { lazy } from 'react';
 
 export type RouteType = {
   path: string,
-  page: FC
+  page: React.LazyExoticComponent<any>
 }
 
 const LazyHomePage = lazy(() => import('../pages/home-page/home-page'));
