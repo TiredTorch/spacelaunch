@@ -2,6 +2,7 @@ import { Button, Stack, styled, Typography } from '@mui/material';
 import { 
 	useGetUpcomingEventsQuery,
 } from 'libs/spacelaunch/store-shared/src/lib/homepage/homepageApi';
+import { useState } from 'react';
 import EventListItem from './event-list-item/event-list-item';
 
 /* eslint-disable-next-line */
@@ -27,10 +28,22 @@ const StyledArrowButton = styled(Button)({
 // eslint-disable-next-line no-unused-vars
 export function EventList(props: EventListProps) {
 
+	const [page, setPage] = useState(0);
 	// eslint-disable-next-line 
-	const { data, isLoading, error } = useGetUpcomingEventsQuery();
+	const { data, isLoading, error } = useGetUpcomingEventsQuery(page);
 
-	const currentEventListItems = data?.results.slice(0, 3);
+	const currentEventListItems = data?.results;
+
+	const handleNextPage = () => {
+		if (!data?.next) return;
+
+		setPage(page + 1);
+	};
+	const handlePrevPage = () => {
+		if (!data?.previous) return;
+
+		setPage(page - 1);
+	};
 
 	return (
 		<StyledStackColumn>
@@ -39,12 +52,12 @@ export function EventList(props: EventListProps) {
           Recent Events
 				</Typography>
 				<StyledStackRow>
-					<StyledArrowButton>
+					<StyledArrowButton onClick={handlePrevPage}>
 						<Typography variant="h3">
               ←
 						</Typography>
 					</StyledArrowButton>
-					<StyledArrowButton>
+					<StyledArrowButton onClick={handleNextPage}>
 						<Typography variant="h3">
               →
 						</Typography>

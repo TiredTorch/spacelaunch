@@ -8,11 +8,13 @@ export const homepageApi = createApi({
 		baseUrl: 'https://spacelaunchnow.me/api/3.3.0/' 
 	}),
 	endpoints: build => ({
-		getUpcomingLaunches: build.query<UpcomingLaunches, void>({ 
-			query: () => 'launch/upcoming?limit=12&mode=detailed'
+		getUpcomingLaunches: build.query<UpcomingLaunches, number>({ 
+			query: (page) => 
+				`launch/upcoming?limit=6&mode=detailed&offset=${page * 6}`
 		}),
-		getUpcomingEvents: build.query<UpcomingEvents, void>({
-			query: () => 'event/upcoming/?limit=12&mode=detailed'
+		getUpcomingEvents: build.query<UpcomingEvents, number>({
+			query: (page) => 
+				`event/upcoming/?limit=3&mode=detailed&offset=${page * 3}`
 		})
 	})
 });

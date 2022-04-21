@@ -16,7 +16,7 @@ export function LaunchesList() {
 
   
 	// eslint-disable-next-line 
-	const { data, isLoading, error } = useGetUpcomingLaunchesQuery();
+	const { data, isLoading, error } = useGetUpcomingLaunchesQuery(0);
   
 	const currentLaunchListItems = data?.results.slice(0, 6);
 
