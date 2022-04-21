@@ -1,4 +1,7 @@
 import { Button, Stack, styled, Typography } from '@mui/material';
+import { 
+	useGetUpcomingLaunchesQuery 
+} from 'libs/spacelaunch/store-shared/src/lib/homepage/homepageApi';
 import EventListItem from './event-list-item/event-list-item';
 
 /* eslint-disable-next-line */
@@ -21,7 +24,14 @@ const StyledArrowButton = styled(Button)({
 	marginRight: '10px'
 });
 
+// eslint-disable-next-line no-unused-vars
 export function EventList(props: EventListProps) {
+
+	// eslint-disable-next-line 
+	const { data, isLoading, error } = useGetUpcomingLaunchesQuery();
+
+	console.log(data?.results[0].id);
+
 	return (
 		<StyledStackColumn>
 			<StyledStackRow>

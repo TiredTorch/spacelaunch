@@ -18,8 +18,8 @@
       "@spacelaunch/spacelaunch/layout-shared": [
         "libs/spacelaunch/layout-shared/src/index.ts"
       ],
-      "@spacelaunch/spacelaunch/routes-shared": [
-        "libs/spacelaunch/routes-shared/src/index.ts"
+      "@spacelaunch/spacelaunch/store-shared": [
+        "libs/spacelaunch/store-shared/src/index.ts"
       ],
       "@spacelaunch/spacelaunch/ui-shared": [
         "libs/spacelaunch/ui-shared/src/index.ts"
