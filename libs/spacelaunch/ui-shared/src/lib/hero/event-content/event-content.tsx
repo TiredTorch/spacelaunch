@@ -1,4 +1,5 @@
 import { ListItem, Stack, styled, Typography } from '@mui/material';
+import dayjs from 'dayjs';
 import { 
 	useGetEventQuery 
 } from 'libs/spacelaunch/store-shared/src/lib/eventpage/eventpageApi';
@@ -47,7 +48,11 @@ export function EventContent() {
 				</StyledTypography>
 			</StyledListItem>
 			<StyledListItem>
-				<SubtitleBox title={data?.date.toString()??'Not found'}/>
+				<SubtitleBox 
+					title={
+						dayjs(data?.date).format('MMM. D, YYYY, H:m a')
+					??'Not found'}
+				/>
 			</StyledListItem>
 			<StyledListItem>
 				<StyledTypography variant="h5">

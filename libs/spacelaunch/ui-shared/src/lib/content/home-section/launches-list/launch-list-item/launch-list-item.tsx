@@ -1,4 +1,5 @@
 import { Box, styled, Typography } from '@mui/material';
+import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
 import SubtitleBox from '../../../../common/subtitle-box/subtitle-box';
 
@@ -46,7 +47,9 @@ export function LaunchListItem(props: LaunchListItemProps) {
 				/>
 			</Link>
 			<StyledSubtitleOverlay>
-				<SubtitleBox title={props.dataTitle.toString()}/>
+				<SubtitleBox 
+					title={dayjs(props.dataTitle).format('MMM. D, YYYY, H:m a')}
+				/>
 			</StyledSubtitleOverlay>
 			<Link to={props.url} style={{
 				textDecoration: 'none', color: '#F1EBFF'

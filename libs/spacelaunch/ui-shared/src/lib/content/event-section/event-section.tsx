@@ -1,4 +1,5 @@
 import { Box, Stack, styled, Typography } from '@mui/material';
+import dayjs from 'dayjs';
 import { 
 	useGetEventQuery 
 } from 'libs/spacelaunch/store-shared/src/lib/eventpage/eventpageApi';
@@ -52,7 +53,9 @@ export function EventSection() {
 						{data?.name}
 					</Typography>
 					<SubtitleBox 
-						title={data?.date.toString()??'Not found'}
+						title={
+							dayjs(data?.date).format('MMM. D, YYYY, H:m a')
+							??'Not found'}
 					/>
 					<InfoString 
 						title={'Destination'} 

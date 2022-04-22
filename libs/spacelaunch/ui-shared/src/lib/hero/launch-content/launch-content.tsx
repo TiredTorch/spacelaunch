@@ -1,4 +1,5 @@
 import { ListItem, Stack, styled, Typography } from '@mui/material';
+import dayjs from 'dayjs';
 import { 
 	useGetLaunchQuery 
 } from 'libs/spacelaunch/store-shared/src/lib/launchpage/launchpageApi';
@@ -43,7 +44,11 @@ export function LaunchContent() {
 				</StyledTypography>
 			</StyledListItem>
 			<StyledListItem>
-				<Timer time={data?.last_updated.toString()}/>
+				<Timer 
+					time={
+						dayjs(data?.last_updated).format('MMM. D, YYYY, H:m a')
+					}
+				/>
 			</StyledListItem>
 		</StyledStack>
 	);
