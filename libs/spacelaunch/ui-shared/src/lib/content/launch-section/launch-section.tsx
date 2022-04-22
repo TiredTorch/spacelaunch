@@ -1,6 +1,5 @@
 import { Stack, styled, Typography } from '@mui/material';
 import Button from '../../common/button/button';
-import VideoPlayer from '../../common/video-player/video-player';
 import InfoString from '../../common/info-string/info-string';
 import { 
 	useGetLaunchQuery 
