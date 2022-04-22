@@ -13,8 +13,18 @@ export interface EventListItemProps {
 const StyledStack = styled(Stack)(({ theme }) => ({
 	width: '30%',
 	[theme.breakpoints.down('sm')] : {
+		alignItems: 'center',
 		width: '90%',
-		margin: 'auto'
+		margin: 'auto',
+		'&:after' : {
+			display: 'block',
+			content: '""',
+			height: '3px',
+			width: '90%',
+			backgroundColor: 'white',
+			margin: '20px auto'
+		}
+
 	}
 }));
 
