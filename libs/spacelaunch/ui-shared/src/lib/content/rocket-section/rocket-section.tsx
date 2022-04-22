@@ -18,12 +18,15 @@ const StyledStack = styled(Stack)({
 	justifyContent: 'center',
 	alignItems: 'center'
 });
-const DetailsWrapper = styled(Stack)({
+const DetailsWrapper = styled(Stack)(({ theme }) => ({
+	flexDirection: 'column',
 	width: '100%',
-	flexDirection: 'row',
 	justifyContent: 'space-around',
-	alignItems: 'flex-start'
-});
+	alignItems: 'flex-start',
+	[theme.breakpoints.down('sm')]: {
+		alignItems: 'center'
+	}
+}));
 
 export function RocketSection() {
   
@@ -113,7 +116,7 @@ export function RocketSection() {
 
 	return (
 		<StyledStack>
-			<DetailsWrapper>
+			<DetailsWrapper  direction={{xs: 'column', sm: 'row',}}>
 				<DetailItem logo={FamilyLogo} title={'Family'}>
 					<DetailList details={familyDetails}/>
 				</DetailItem>

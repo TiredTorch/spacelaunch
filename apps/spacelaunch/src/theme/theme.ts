@@ -52,10 +52,18 @@ theme.typography.h4 = {
 	},
 	[theme.breakpoints.down('xs')] : {
 		fontSize: '1.7rem',
+	},
+	'&.detail' : {
+		fontSize: '3.375rem',
 	}
 };
 theme.typography.h5 = {
-	fontSize: '1.063rem'
+	fontSize: '1.063rem',
+	'&.detail' : {
+		[theme.breakpoints.down('md')] : {
+			fontSize: '1.6rem',
+		}
+	}
 };
 
 theme.components= {
