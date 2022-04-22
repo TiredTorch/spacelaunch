@@ -43,6 +43,12 @@ theme.typography.h2 = {
 theme.typography.h3 = {
 	fontSize: '3.375rem',
 	fontWeight: 700,
+	[theme.breakpoints.down('md')] : {
+		fontSize: '3rem',
+	},
+	[theme.breakpoints.down('xs')] : {
+		fontSize: '2.5rem',
+	},
 };
 theme.typography.h4 = {
 	fontSize: '3.375rem',

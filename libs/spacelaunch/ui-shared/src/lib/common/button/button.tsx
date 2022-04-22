@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 
 /* eslint-disable-next-line */
 export interface ButtonProps {
-  userSize: 'sm' | 'md',
+  userSize: 'sm' | 'md' | 'rp',
   title: string,
   url: string
 }
@@ -22,12 +22,12 @@ const StyledButton = styled(MUIButton)(() => ({
 	justifyContent: 'center'
 }));
 
-const StyledButtonMD = styled(StyledButton)({
+const StyledButtonMD = styled(StyledButton)(() => ({
 	padding: '30px 80px',
 	width: '359px',
 	height: '80px',
 	background: 'linear-gradient(93.72deg, #8E2DE2 9.41%, #4A00E0 86.1%)',
-});
+}));
 
 const StyledButtonSM = styled(StyledButton)({
 	padding: '10px 20px',
@@ -35,6 +35,19 @@ const StyledButtonSM = styled(StyledButton)({
 	height: '38px',
 	background: 'linear-gradient(94.97deg, #8E2DE2 3.92%, #4A00E0 52.92%)',
 });
+
+const StyledButtonResp = styled(StyledButton)(({ theme }) => ({
+	padding: '30px 80px',
+	width: '359px',
+	height: '80px',
+	background: 'linear-gradient(93.72deg, #8E2DE2 9.41%, #4A00E0 86.1%)',
+	[theme.breakpoints.down('sm')] : {
+		padding: '10px 50px',
+		width: '259px',
+		height: '40px',
+	}
+}));
+
 
 
 export function Button(props: ButtonProps) {
@@ -53,7 +66,6 @@ export function Button(props: ButtonProps) {
 				</StyledTypography>
 			</StyledButtonSM>
 		);
-
 	case 'md':
 		return (
 			<StyledButtonMD variant="contained" onClick={handleRedirect}>
@@ -62,7 +74,15 @@ export function Button(props: ButtonProps) {
 				</StyledTypography>
 			</StyledButtonMD>
 		);
-    
+	case 'rp':
+		return (
+			<StyledButtonResp variant="contained" onClick={handleRedirect}>
+				<StyledTypography fontSize='20px' fontWeight={500}>
+					{props.title}
+				</StyledTypography>
+			</StyledButtonResp>
+		);
+	
 	default:
 		return (
 			<h1>Smth went wrong</h1>

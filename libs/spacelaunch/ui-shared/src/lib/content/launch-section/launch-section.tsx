@@ -1,6 +1,5 @@
-import { CardMedia, ListItem, Stack, styled, Typography } from '@mui/material';
+import { Stack, styled, Typography } from '@mui/material';
 import Button from '../../common/button/button';
-import SubtitleBox from '../../common/subtitle-box/subtitle-box';
 import VideoPlayer from '../../common/video-player/video-player';
 import InfoString from '../../common/info-string/info-string';
 import { 
@@ -14,22 +13,6 @@ const StyledStack = styled(Stack)({
 	alignItems: 'center',
 	justifyContent: 'center'
 });
-const SubtitleWrapper = styled(Stack)({
-	width: '70%',
-	padding: '0',
-	flexWrap: 'wrap',
-	flexDirection: 'row',
-	alignItems: 'center',
-	justifyContent: 'space-evenly'
-});
-const SubtitleItem = styled(ListItem)({
-	width: '33%',
-	margin: '0',
-	display: 'flex',
-	justifyContent: 'center',
-	alignItems: 'center'
-});
-
 export function LaunchSection() {
 
 	const { id } = useParams();
@@ -37,9 +20,9 @@ export function LaunchSection() {
 
 	return (
 		<StyledStack>
-			{data?.vidURLs?.length ? 
+			{/* {data?.vidURLs?.length ? 
 				<VideoPlayer videoSrc={data?.vidURLs[0].url}/> : ''
-			}
+			} */}
 			<StyledStack>
 				<Typography variant="h3">
           Overview
@@ -55,24 +38,11 @@ export function LaunchSection() {
 				<InfoString title={'Mission'} info={
 					data?.mission.type??'-'
 				}/>
-				<SubtitleWrapper>
-					<SubtitleItem>
-						<SubtitleBox title={'Text'}/>
-					</SubtitleItem>
-					<SubtitleItem>
-						<SubtitleBox title={'Text'}/>
-					</SubtitleItem>
-					<SubtitleItem>
-						<SubtitleBox title={'Text'}/>
-					</SubtitleItem>
-					<SubtitleItem>
-						<SubtitleBox title={'Text'}/>
-					</SubtitleItem>
-					<Typography variant="h5" 
-						align="center" marginTop={'20px'} width={'100%'}>
-						{data?.mission.description??'Not found'}
-					</Typography>
-				</SubtitleWrapper>
+				<Typography variant="h5" 
+					align="center" marginTop={'20px'} width={'100%'}
+					padding={{lg: '0 200px', md: '0 100px', xs: '0 100px'}}>
+					{data?.mission.description??'Not found'}
+				</Typography>
 			</StyledStack>
 			<StyledStack>
 				<Typography variant="h3">
@@ -85,18 +55,21 @@ export function LaunchSection() {
 					data?.rocket.configuration.name??'-'
 				}/>
 				<Typography variant="h5" 
-					align="center" margin={'20px 0'} padding={'0 200px'}
+					align="center" 
+					margin={'20px 0'} 
+					padding={{lg: '0 200px', md: '0 100px', xs: '0 100px'}}
 				>
 					{data?.rocket.configuration.description??'Not found'}
 				</Typography>
-				<Button userSize={'md'} 
+				<Button userSize={'rp'} 
 					title={'See Rocket Details'} 
 					url={`/rocket/${data?.rocket.configuration.id}`}
 				/>
 			</StyledStack>
-			<CardMedia
+			{/* <CardMedia
 				component={'iframe'} 
-				src="https://maps.google.com/maps?q='28.56194122','-80.57735736'&hl=es&z=14&amp;output=embed" 
+				src="https://maps.google.com/maps?q='28.56194122',
+				'-80.57735736'&hl=es&z=14&amp;output=embed" 
 				loading="lazy"
 				sx={{
 					margin: '100px auto 0',
@@ -104,7 +77,7 @@ export function LaunchSection() {
 					height: '492px',
 					border: 'none'
 				}}
-			/>
+			/> */}
 		</StyledStack>
 	);
 }
