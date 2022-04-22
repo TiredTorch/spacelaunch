@@ -3,24 +3,20 @@ import {
 	useGetRocketQuery 
 } from 'libs/spacelaunch/store-shared/src/lib/rocketpage/rocketpageApi';
 import { useParams } from 'react-router';
-import Button from '../../common/button/button';
 import DetailItem from './detail-item/detail-item';
 import DetailList from './detail-list/detail-list';
 import { 
 	DetailListItemProps 
 } from './detail-list/detail-list-item/detail-list-item';
+import FamilyLogo from 'libs/shared/assets/assets/rocketDetails/family.svg';
+import SpecificationsLogo 
+	from 'libs/shared/assets/assets/rocketDetails/specifications.svg';
+import PayloadLogo from 'libs/shared/assets/assets/rocketDetails/payload.svg';
 
 const StyledStack = styled(Stack)({
 	flexDirection: 'column',
 	justifyContent: 'center',
 	alignItems: 'center'
-});
-const SubtitleWrapper = styled(Stack)({
-	width: '70%',
-	flexDirection: 'row',
-	justifyContent: 'space-around',
-	alignItems: 'center'
-
 });
 const DetailsWrapper = styled(Stack)({
 	width: '100%',
@@ -117,19 +113,14 @@ export function RocketSection() {
 
 	return (
 		<StyledStack>
-			<SubtitleWrapper>
-				<Button userSize={'sm'} title={'ACTIVE'} url={''}/>
-				<Button userSize={'sm'} title={'RE-USABLE'} url={''}/>
-				<Button userSize={'sm'} title={'FALCON'} url={''}/>
-			</SubtitleWrapper>
 			<DetailsWrapper>
-				<DetailItem logo={'https://www.freepnglogos.com/uploads/rocket-png/rocket-icon-download-png-and-vector-36.png'} title={'Family'}>
+				<DetailItem logo={FamilyLogo} title={'Family'}>
 					<DetailList details={familyDetails}/>
 				</DetailItem>
-				<DetailItem logo={'https://cdn.pixabay.com/photo/2014/04/03/00/40/document-309065_960_720.png'} title={'Specifications'}>
+				<DetailItem logo={SpecificationsLogo} title={'Specifications'}>
 					<DetailList details={specificationsDetails}/>
 				</DetailItem>
-				<DetailItem logo={'https://cdn1.iconfinder.com/data/icons/aami-web-internet/64/aami6-85-512.png'} title={'Payload Capacity'}>
+				<DetailItem logo={PayloadLogo} title={'Payload Capacity'}>
 					<DetailList details={payloadDetails}/>
 				</DetailItem>
 			</DetailsWrapper>

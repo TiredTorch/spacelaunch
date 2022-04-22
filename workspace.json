@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "shared-assets": "libs/shared/assets",
     "spacelaunch": "apps/spacelaunch",
     "spacelaunch-e2e": "apps/spacelaunch-e2e",
     "spacelaunch-layout-shared": "libs/spacelaunch/layout-shared",

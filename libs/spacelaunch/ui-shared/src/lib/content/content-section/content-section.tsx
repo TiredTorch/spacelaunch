@@ -11,7 +11,6 @@ const StyledStack = styled(Stack)(({ theme }) => ({
 	margin: 'auto',
 	padding: '4%',
 	backgroundColor: theme.palette.primary.light,
-
 	[theme.breakpoints.down('lg')] : {
 		padding: '3%',
 		width: '80vw'
