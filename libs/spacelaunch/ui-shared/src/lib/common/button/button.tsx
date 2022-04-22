@@ -6,7 +6,8 @@ import { useNavigate } from 'react-router';
 export interface ButtonProps {
   userSize: 'sm' | 'md' | 'rp',
   title: string,
-  url: string
+  url?: string
+	handler?: () => void
 }
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
@@ -54,8 +55,13 @@ export function Button(props: ButtonProps) {
 	const navigate = useNavigate();
 
 	const handleRedirect = () => {
-		navigate(props.url);
+		navigate(props.url??'');
 	}; 
+
+	const handleAction = 
+		props.url ? handleRedirect : 
+			(props.handler ? props.handler : () => '');
+
 
 	switch (props.userSize) {
 	case 'sm':
@@ -68,7 +74,7 @@ export function Button(props: ButtonProps) {
 		);
 	case 'md':
 		return (
-			<StyledButtonMD variant="contained" onClick={handleRedirect}>
+			<StyledButtonMD variant="contained" onClick={handleAction}>
 				<StyledTypography fontSize='20px' fontWeight={700}>
 					{props.title}
 				</StyledTypography>
@@ -76,7 +82,12 @@ export function Button(props: ButtonProps) {
 		);
 	case 'rp':
 		return (
-			<StyledButtonResp variant="contained" onClick={handleRedirect}>
+			<StyledButtonResp 
+				variant="contained" 
+				onClick={
+					handleAction
+				}
+			>
 				<StyledTypography fontSize='20px' fontWeight={500}>
 					{props.title}
 				</StyledTypography>

@@ -31,7 +31,7 @@ export function HomeContent() {
 			</ListItem>
 			<ListItem>
 				<Button 
-					userSize="md"  
+					userSize='rp'  
 					title="Show All Launches" 
 					url="/"
 				/>

@@ -1,7 +1,9 @@
 import { Box, styled, Typography } from '@mui/material';
+import { Button } from '@spacelaunch/spacelaunch/ui-shared';
 import { 
 	useGetUpcomingLaunchesQuery 
 } from 'libs/spacelaunch/store-shared/src/lib/homepage/homepageApi';
+import { useState } from 'react';
 import LaunchListItem from './launch-list-item/launch-list-item';
 
 const StyledBox = styled(Box)({
@@ -13,12 +15,18 @@ const StyledBox = styled(Box)({
 });
 
 export function LaunchesList() {
+  
+	const [page, setPage] = useState(0);
 
-  
 	// eslint-disable-next-line 
-	const { data, isLoading, error } = useGetUpcomingLaunchesQuery(0);
+	const { data, isLoading, error } = useGetUpcomingLaunchesQuery(page);
   
-	const currentLaunchListItems = data?.results.slice(0, 6);
+	const currentLaunchListItems = data?.results;
+
+	
+	const handleLoad = () => {
+		setPage(page + 1);
+	};
 
 	return (
 		<StyledBox>
@@ -34,6 +42,7 @@ export function LaunchesList() {
 					img={item.image_url}		
 				/>
 			))}
+			<Button userSize={'rp'} title={'Load More'} handler={handleLoad}/>
 		</StyledBox>
 	);
 }

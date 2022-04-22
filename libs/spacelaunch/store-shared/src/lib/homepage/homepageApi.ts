@@ -10,7 +10,7 @@ export const homepageApi = createApi({
 	endpoints: build => ({
 		getUpcomingLaunches: build.query<UpcomingLaunches, number>({ 
 			query: (page) => 
-				`launch/upcoming?limit=6&mode=detailed&offset=${page * 6}`
+				`launch/upcoming?limit=${(page + 1) * 6}&mode=detailed`
 		}),
 		getUpcomingEvents: build.query<UpcomingEvents, number>({
 			query: (page) => 

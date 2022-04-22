@@ -10,17 +10,20 @@ export interface LaunchListItemProps {
   launchTitle: string
 }
 
-const StyledBox = styled(Box)({
+const StyledBox = styled(Box)(({theme}) => ({
 	display: 'flex',
 	flexDirection: 'column',
 	alignItems: 'center',
 	width: '45%',
-	marginTop: '50px'
-});
+	marginTop: '30px',
+	[theme.breakpoints.down('sm')] : {
+		width: '80%'
+	}
+}));
 
 const StyledSubtitleOverlay = styled(Box)({
 	position: 'relative',
-	top: '-15px',
+	top: '-20px',
 });
 
 export function LaunchListItem(props: LaunchListItemProps) {
@@ -36,7 +39,9 @@ export function LaunchListItem(props: LaunchListItemProps) {
 					src={img}
 					sx={{
 						height: '264px',
-						width: '100%'
+						width: '100%',
+						objectFit: 'cover'
+						
 					}}
 				/>
 			</Link>
@@ -46,7 +51,7 @@ export function LaunchListItem(props: LaunchListItemProps) {
 			<Link to={props.url} style={{
 				textDecoration: 'none', color: '#F1EBFF'
 			}}>
-				<Typography variant="h2">
+				<Typography variant="h2" marginBottom={'20px'}>
 					{props.launchTitle}
 				</Typography>
 			</Link>

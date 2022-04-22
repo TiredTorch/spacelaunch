@@ -28,7 +28,8 @@ export function EventListItem(props: EventListItemProps) {
 					src={img}
 					sx={{
 						height: '264px',
-						width: '100%'
+						width: '100%',
+						objectFit: 'cover'
 					}}
 				/>
 			</Link>
