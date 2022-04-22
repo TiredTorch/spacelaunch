@@ -1,6 +1,6 @@
-import { AppBar, Typography } from "@mui/material";
-import { styled } from "@mui/material";
-import { Link } from "react-router-dom";
+import { AppBar, Typography } from '@mui/material';
+import { styled } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {
@@ -8,38 +8,46 @@ export interface HeaderProps {
 }
 
 const StyledHeader = styled(AppBar)(({ theme }) => ({
-  zIndex: '1251',
-  backgroundColor: 'rgba(0, 0, 0, 0.2)',
-  height: '100px',
+	zIndex: '1251',
+	backgroundColor: 'rgba(0, 0, 0, 0.2)',
+	height: '100px',
   
-  display: 'flex',
-  justifyContent: 'center',
+	display: 'flex',
+	justifyContent: 'center',
 
-  paddingLeft: '20%'
-}))
+	paddingLeft: '20%',
+
+	[theme.breakpoints.down('md')]: {
+		paddingLeft: '0',
+	}
+}));
 
 const StyledHeaderTitle = styled(Typography)(({ theme }) => ({
-  color: theme.palette.text.primary,
-}))
+	color: theme.palette.text.primary,
+
+	[theme.breakpoints.down('md')]: {
+		textAlign: 'center',
+	}
+}));
 
 export function Header(props: HeaderProps) {
 
   
-  return (
-    <StyledHeader>
+	return (
+		<StyledHeader>
       
-        {props.hasLinkToHome ? (
-          <Link to="/" style={{ textDecoration: 'none'}}>
-            <StyledHeaderTitle variant="h2">
+			{props.hasLinkToHome ? (
+				<Link to="/" style={{ textDecoration: 'none'}}>
+					<StyledHeaderTitle variant="h2">
               ← Back to Home
-            </StyledHeaderTitle>
-          </Link>
+					</StyledHeaderTitle>
+				</Link>
           
-        ) : 
-          ''
-        }
-    </StyledHeader>
-  );
+			) : 
+				''
+			}
+		</StyledHeader>
+	);
 }
 
 export default Header;

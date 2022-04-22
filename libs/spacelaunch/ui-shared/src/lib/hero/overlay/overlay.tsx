@@ -6,12 +6,16 @@ export interface OverlayProps {
   children: React.ReactNode
 }
 
-const StyledContainer = styled(Box)(() => ({
+const StyledContainer = styled(Box)(({ theme }) => ({
 	maxWidth: '100vw',
-	height: '1080px',
-	padding: '300px 18vw',
+	height: '115vh',
+	padding: '10vw 18vw',
 	background:
    'linear-gradient(180deg, #302B63 21.88%, rgba(24, 27, 72, 0.71) 90.1%)',
+
+	[theme.breakpoints.down('md')] : {
+		padding: 'vw 0vw',
+	},
 }));
 const StyledImgContainer = styled(Box)(() => ({
 	position: 'absolute',

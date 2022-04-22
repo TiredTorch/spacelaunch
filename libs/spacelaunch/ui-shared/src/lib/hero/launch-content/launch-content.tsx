@@ -5,10 +5,12 @@ import {
 import { useParams } from 'react-router';
 import Timer from '../../common/timer/timer';
 
-const StyledStack = styled(Stack)({
-	margin: 'auto',
-	width: '60vw'
-});
+const StyledStack = styled(Stack)(({ theme }) => ({
+	width: '60vw',
+	[theme.breakpoints.down('lg')] : {
+		width: '80vw'
+	}
+}));
 const StyledListItem = styled(ListItem)({
 	display: 'flex',
 	justifyContent: 'center',
@@ -24,7 +26,9 @@ export function LaunchContent() {
 	const { data } = useGetLaunchQuery(`${id}`);
 
 	return (
-		<StyledStack spacing='30px'>
+		<StyledStack
+			spacing={'60px'}
+		>
 			<StyledListItem>
 				<StyledTypography variant="h1">
 					{data?.name}

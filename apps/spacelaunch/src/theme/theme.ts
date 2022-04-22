@@ -1,6 +1,15 @@
 import { createTheme } from '@mui/material';
 
 const theme = createTheme({
+	breakpoints: {
+		values: {
+			xs: 0,
+			sm: 768,
+			md: 1024,
+			lg: 1200,
+			xl: 1536
+		}
+	},
 	palette: {
 		text: {
 			primary: '#F1EBFF',
@@ -19,7 +28,10 @@ const theme = createTheme({
 theme.typography.fontFamily = 'Montserrat';
 
 theme.typography.h1 = {
-	fontSize: '4.75rem'
+	fontSize: '4.75rem',
+	[theme.breakpoints.down('md')] : {
+		fontSize: '3.75rem',
+	}
 };
 theme.typography.h2 = {
 	fontSize: '1.625rem',
