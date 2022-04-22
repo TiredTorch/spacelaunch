@@ -10,9 +10,13 @@ export interface EventListItemProps {
   eventTitle: string
 }
 
-const StyledStack = styled(Stack)({
-	width: '30%'
-});
+const StyledStack = styled(Stack)(({ theme }) => ({
+	width: '30%',
+	[theme.breakpoints.down('sm')] : {
+		width: '90%',
+		margin: 'auto'
+	}
+}));
 
 export function EventListItem(props: EventListItemProps) {
 

@@ -8,17 +8,23 @@ import EventListItem from './event-list-item/event-list-item';
 /* eslint-disable-next-line */
 export interface EventListProps {}
 
-const StyledStackRow = styled(Stack)({
+const StyledStackRow = styled(Stack)(({theme}) => ({
 	flexDirection: 'row',
 	justifyContent: 'space-between',
-	margin: '0 0 20px 0'
-});
+	margin: '0 0 20px 0',
+	'&.main' : {
+		[theme.breakpoints.down('sm')] : {
+			flexDirection: 'column'
+		}
+	}
+}));
 
-const StyledStackColumn = styled(Stack)({
+const StyledStackColumn = styled(Stack)(() => ({
 	flexDirection: 'column',
 	justifyContent: 'space-around',
-	margin: '0 0 60px 0'
-});
+	margin: '0 0 60px 0',
+	
+}));
 
 const StyledArrowButton = styled(Button)({
 	color: 'white',
@@ -64,7 +70,7 @@ export function EventList(props: EventListProps) {
 					</StyledArrowButton>
 				</StyledStackRow>
 			</StyledStackRow>
-			<StyledStackRow>
+			<StyledStackRow  className='main'>
 				{currentEventListItems?.map((item) => (
 					<EventListItem
 						url={`/event/${item.id}`}
