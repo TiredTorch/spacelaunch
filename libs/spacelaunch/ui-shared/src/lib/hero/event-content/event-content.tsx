@@ -6,10 +6,18 @@ import { useParams } from 'react-router';
 import Button from '../../common/button/button';
 import SubtitleBox from '../../common/subtitle-box/subtitle-box';
 
-const StyledStack = styled(Stack)({
-	margin: 'auto',
-	width: '40vw'
-});
+const StyledStack = styled(Stack)(({ theme }) => ({
+	width: '40vw',
+	[theme.breakpoints.down('lg')] : {
+		width: '70vw'
+	},
+	[theme.breakpoints.down('md')] : {
+		width: '80vw'
+	},
+	[theme.breakpoints.down('sm')] : {
+		width: '90vw'
+	},
+}));
 const StyledListItem = styled(ListItem)({
 	display: 'flex',
 	justifyContent: 'center',
@@ -25,7 +33,14 @@ export function EventContent() {
 	const { data } = useGetEventQuery(`${id}`);
 
 	return (
-		<StyledStack spacing='20px'>
+		<StyledStack 
+			spacing={{
+				xl: '30px', 
+				lg: '20px', 
+				md: '30px', 
+				sm: '20px', 
+				xs: '10px'
+			}}>
 			<StyledListItem>
 				<StyledTypography variant="h1">
 					{data?.name ??'Not found'}

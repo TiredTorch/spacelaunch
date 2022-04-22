@@ -7,14 +7,24 @@ export interface OverlayProps {
 }
 
 const StyledContainer = styled(Box)(({ theme }) => ({
-	maxWidth: '100vw',
+	display: 'flex',
+	justifyContent: 'center',
 	height: '115vh',
-	padding: '10vw 18vw',
+	padding: '12vw 10vw',
 	background:
    'linear-gradient(180deg, #302B63 21.88%, rgba(24, 27, 72, 0.71) 90.1%)',
 
+	[theme.breakpoints.down('lg')] : {
+		padding: '14vw 5vw',
+	},
 	[theme.breakpoints.down('md')] : {
-		padding: 'vw 0vw',
+		padding: '20vw 0vw',
+	},
+	[theme.breakpoints.down('sm')] : {
+		padding: '30vw 0vw',
+	},
+	[theme.breakpoints.down('xs')] : {
+		padding: '40vw 0vw',
 	},
 }));
 const StyledImgContainer = styled(Box)(() => ({

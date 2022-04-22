@@ -6,10 +6,13 @@ import { useParams } from 'react-router';
 import Timer from '../../common/timer/timer';
 
 const StyledStack = styled(Stack)(({ theme }) => ({
-	width: '60vw',
+	width: '80vw',
 	[theme.breakpoints.down('lg')] : {
-		width: '80vw'
-	}
+		width: '90vw'
+	},
+	[theme.breakpoints.down('md')] : {
+		width: '100vw'
+	},
 }));
 const StyledListItem = styled(ListItem)({
 	display: 'flex',
@@ -27,7 +30,7 @@ export function LaunchContent() {
 
 	return (
 		<StyledStack
-			spacing={'60px'}
+			spacing={{xl: '30px', lg: '30px', md: '50px', sm: '20px'}}
 		>
 			<StyledListItem>
 				<StyledTypography variant="h1">

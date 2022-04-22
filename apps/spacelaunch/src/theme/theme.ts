@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material';
 const theme = createTheme({
 	breakpoints: {
 		values: {
-			xs: 0,
+			xs: 550,
 			sm: 768,
 			md: 1024,
 			lg: 1200,
@@ -31,6 +31,9 @@ theme.typography.h1 = {
 	fontSize: '4.75rem',
 	[theme.breakpoints.down('md')] : {
 		fontSize: '3.75rem',
+	},
+	[theme.breakpoints.down('sm')] : {
+		fontSize: '3rem',
 	}
 };
 theme.typography.h2 = {
@@ -40,6 +43,16 @@ theme.typography.h2 = {
 theme.typography.h3 = {
 	fontSize: '3.375rem',
 	fontWeight: 700,
+};
+theme.typography.h4 = {
+	fontSize: '3.375rem',
+	fontWeight: 700,
+	[theme.breakpoints.down('md')] : {
+		fontSize: '2rem',
+	},
+	[theme.breakpoints.down('xs')] : {
+		fontSize: '1.7rem',
+	}
 };
 theme.typography.h5 = {
 	fontSize: '1.063rem'
