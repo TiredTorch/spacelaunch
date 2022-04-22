@@ -1,8 +1,9 @@
 import { ListItem, Stack, styled, Typography } from '@mui/material';
+import { 
+	useGetLaunchQuery 
+} from 'libs/spacelaunch/store-shared/src/lib/launchpage/launchpageApi';
+import { useParams } from 'react-router';
 import Timer from '../../common/timer/timer';
-
-/* eslint-disable-next-line */
-export interface LaunchContentProps {}
 
 const StyledStack = styled(Stack)({
 	margin: 'auto',
@@ -17,21 +18,25 @@ const StyledTypography = styled(Typography)({
 	textAlign: 'center'
 });
 
-export function LaunchContent(props: LaunchContentProps) {
+export function LaunchContent() {
+
+	const { id } = useParams();
+	const { data } = useGetLaunchQuery(`${id}`);
+
 	return (
 		<StyledStack spacing='30px'>
 			<StyledListItem>
 				<StyledTypography variant="h1">
-          Upcoming Spaceflight Launches
+					{data?.name}
 				</StyledTypography>
 			</StyledListItem>
 			<StyledListItem>
 				<StyledTypography variant="h2">
-          Go for launch
+					{data?.status.name}
 				</StyledTypography>
 			</StyledListItem>
 			<StyledListItem>
-				<Timer/>
+				<Timer time={data?.last_updated.toString()}/>
 			</StyledListItem>
 		</StyledStack>
 	);

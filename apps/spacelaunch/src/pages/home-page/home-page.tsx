@@ -11,7 +11,10 @@ export function HomePage(props: HomePageProps) {
 			heroComponent={HomeContent} 
 			contentComponent={HomeSection} 
 			settings={{
-				hasHeaderLink: false
+				hasHeaderLink: false,
+				bg: 
+				// eslint-disable-next-line max-len
+				'http://unblast.com/wp-content/uploads/2021/01/Space-Background-Image-6.jpg'
 			}}/>
 	);
 }

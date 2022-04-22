@@ -1,11 +1,12 @@
 import { Box, Stack, styled, Typography } from '@mui/material';
+import { 
+	useGetEventQuery 
+} from 'libs/spacelaunch/store-shared/src/lib/eventpage/eventpageApi';
+import { useParams } from 'react-router';
 import InfoString from '../../common/info-string/info-string';
 import SubtitleBox from '../../common/subtitle-box/subtitle-box';
 import VideoPlayer from '../../common/video-player/video-player';
 import EventList from '../home-section/event-list/event-list';
-
-/* eslint-disable-next-line */
-export interface EventSectionProps {}
 
 const StyledStack = styled(Stack)({
 	justifyContent: 'space-around'
@@ -17,15 +18,18 @@ const StyledInformationWrapper = styled(Stack)({
 	justifyContent: 'space-around'
 });
 
-export function EventSection(props: EventSectionProps) {
-	const img = 'https://plasticsurgery-ua.org/wp-content/uploads/2016/11/default-placeholder.png';
+export function EventSection() {
+	const { id } = useParams();
+	const { data } = useGetEventQuery(`${id}`);
 
 	return (
 		<StyledStack>
-			<VideoPlayer videoSrc={'https://www.youtube.com/embed/wxiT4CkO7CQ'}/>
+			{data?.video_url ?
+				<VideoPlayer videoSrc={data?.video_url}/> : ''
+			}
 			<StyledInformationWrapper>
 				<Box component={'img'} 
-					src={img}
+					src={data?.launches[0].image}
 					sx={{
 						height: '300px',
 						width: '50%'
@@ -33,13 +37,19 @@ export function EventSection(props: EventSectionProps) {
 				/>
 				<StyledStack sx={{width: '40%'}}>
 					<Typography variant="h2">
-            Long March 3B/E | Gaofen 14
+						{data?.name}
 					</Typography>
-					<SubtitleBox title={'Dec. 6, 2020, 6:17 p.m.'}/>
-					<InfoString title={'Destination'} info={'Low Earth Orbit'}/>
-					<InfoString title={'Mission'} info={'Resupply'}/>
+					<SubtitleBox title={data?.date.toString()??'Not found'}/>
+					<InfoString 
+						title={'Destination'} 
+						info={data?.launches[0].mission.orbit.name??'Not found'}
+					/>
+					<InfoString 
+						title={'Mission'} 
+						info={data?.launches[0].mission.type??'Not found'}
+					/>
 					<Typography variant="h5">
-          SpaceX will launch the first cargo variant of its Dragon 2 spacecraft on their 21st commercial resupply services mission to the International Space Station. The flight will be conducted under the second Commercial Resupply Services contract with NASA. Dragon will be filled with supplies
+						{data?.launches[0].mission.description}
 					</Typography>
 				</StyledStack>
 			</StyledInformationWrapper>

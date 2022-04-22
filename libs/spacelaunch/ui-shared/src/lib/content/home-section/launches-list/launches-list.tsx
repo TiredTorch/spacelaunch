@@ -1,45 +1,41 @@
-import { Box, styled, Typography } from "@mui/material";
-import LaunchListItem from "./launch-list-item/launch-list-item";
-
-/* eslint-disable-next-line */
-export interface LaunchesListProps {}
+import { Box, styled, Typography } from '@mui/material';
+import { 
+	useGetUpcomingLaunchesQuery 
+} from 'libs/spacelaunch/store-shared/src/lib/homepage/homepageApi';
+import LaunchListItem from './launch-list-item/launch-list-item';
 
 const StyledBox = styled(Box)({
-  marginTop: '20px',
+	marginTop: '20px',
 
-  display: 'flex',
-  flexWrap: 'wrap',
-  justifyContent: 'space-evenly',
-})
+	display: 'flex',
+	flexWrap: 'wrap',
+	justifyContent: 'space-evenly',
+});
 
-export function LaunchesList(props: LaunchesListProps) {
-  return (
-    <StyledBox>
-      <Typography variant="h3" align="center" width={'100%'}>
+export function LaunchesList() {
+
+  
+	// eslint-disable-next-line 
+	const { data, isLoading, error } = useGetUpcomingLaunchesQuery(0);
+  
+	const currentLaunchListItems = data?.results.slice(0, 6);
+
+	return (
+		<StyledBox>
+			<Typography variant="h3" align="center" width={'100%'}>
         Spaceflight Launches
-      </Typography>
-      <LaunchListItem 
-        url={"/launch/1"} 
-        dataTitle={"Dec. 6, 2020, 6:17 p.m."} 
-        launchTitle={"Long March 3B/E | Gaofen 14"}
-      />
-      <LaunchListItem 
-        url={"/launch/1"} 
-        dataTitle={"Dec. 6, 2020, 6:17 p.m."} 
-        launchTitle={"Long March 3B/E | Gaofen 14"}
-      />
-      <LaunchListItem 
-        url={"/launch/1"} 
-        dataTitle={"Dec. 6, 2020, 6:17 p.m."} 
-        launchTitle={"Long March 3B/E | Gaofen 14"}
-      />
-      <LaunchListItem 
-        url={"/launch/1"} 
-        dataTitle={"Dec. 6, 2020, 6:17 p.m."} 
-        launchTitle={"Long March 3B/E | Gaofen 14"}
-      />
-    </StyledBox>
-  );
+			</Typography>
+			{currentLaunchListItems?.map((item) => (
+				<LaunchListItem 
+					url={`/launch/${item.id}`}
+					dataTitle={item.net}
+					launchTitle={item.name}
+					key={`route ${item.id}`} 
+					img={item.image_url}		
+				/>
+			))}
+		</StyledBox>
+	);
 }
 
 export default LaunchesList;

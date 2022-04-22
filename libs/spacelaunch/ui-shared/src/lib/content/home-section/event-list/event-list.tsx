@@ -1,4 +1,8 @@
 import { Button, Stack, styled, Typography } from '@mui/material';
+import { 
+	useGetUpcomingEventsQuery,
+} from 'libs/spacelaunch/store-shared/src/lib/homepage/homepageApi';
+import { useState } from 'react';
 import EventListItem from './event-list-item/event-list-item';
 
 /* eslint-disable-next-line */
@@ -21,7 +25,26 @@ const StyledArrowButton = styled(Button)({
 	marginRight: '10px'
 });
 
+// eslint-disable-next-line no-unused-vars
 export function EventList(props: EventListProps) {
+
+	const [page, setPage] = useState(0);
+	// eslint-disable-next-line 
+	const { data, isLoading, error } = useGetUpcomingEventsQuery(page);
+
+	const currentEventListItems = data?.results;
+
+	const handleNextPage = () => {
+		if (!data?.next) return;
+
+		setPage(page + 1);
+	};
+	const handlePrevPage = () => {
+		if (!data?.previous) return;
+
+		setPage(page - 1);
+	};
+
 	return (
 		<StyledStackColumn>
 			<StyledStackRow>
@@ -29,12 +52,12 @@ export function EventList(props: EventListProps) {
           Recent Events
 				</Typography>
 				<StyledStackRow>
-					<StyledArrowButton>
+					<StyledArrowButton onClick={handlePrevPage}>
 						<Typography variant="h3">
               ←
 						</Typography>
 					</StyledArrowButton>
-					<StyledArrowButton>
+					<StyledArrowButton onClick={handleNextPage}>
 						<Typography variant="h3">
               →
 						</Typography>
@@ -42,21 +65,15 @@ export function EventList(props: EventListProps) {
 				</StyledStackRow>
 			</StyledStackRow>
 			<StyledStackRow>
-				<EventListItem 
-					url={'/event/1'} 
-					dataTitle={'Dec. 6, 2020, 6:17 p.m.'} 
-					eventTitle={'Falcon 9 Block 5 | Dragon CRS-2 SpX-21'}
-				/>
-				<EventListItem 
-					url={'/event/1'} 
-					dataTitle={'Dec. 6, 2020, 6:17 p.m.'} 
-					eventTitle={'Falcon 9 Block 5 | Dragon CRS-2 SpX-21'}
-				/>
-				<EventListItem 
-					url={'/event/1'} 
-					dataTitle={'Dec. 6, 2020, 6:17 p.m.'} 
-					eventTitle={'Falcon 9 Block 5 | Dragon CRS-2 SpX-21'}
-				/>
+				{currentEventListItems?.map((item) => (
+					<EventListItem
+						url={`/event/${item.id}`}
+						dataTitle={item.date}
+						eventTitle={item.name}
+						key={`event ${item.id}`} 
+						img={item.feature_image}					
+					/>
+				))}
 			</StyledStackRow>
 		</StyledStackColumn>
 	);

@@ -3,18 +3,23 @@ import {
 	LaunchContent, 
 	LaunchSection 
 } from '@spacelaunch/spacelaunch/ui-shared';
+import { 
+	useGetLaunchQuery 
+} from 'libs/spacelaunch/store-shared/src/lib/launchpage/launchpageApi';
+import { useParams } from 'react-router';
 
-/* eslint-disable-next-line */
-export interface LaunchPageProps {}
-
-// eslint-disable-next-line no-unused-vars
-export function LaunchPage(props: LaunchPageProps) {
+export function LaunchPage() {
+	
+	const { id } = useParams();
+	const { data } = useGetLaunchQuery(`${id}`);
+	
 	return (
 		<SpacelaunchLayout 
 			heroComponent={LaunchContent} 
 			contentComponent={LaunchSection} 
 			settings={{
-				hasHeaderLink: false
+				hasHeaderLink: true,
+				bg: data?.image
 			}}/>
 	);
 }

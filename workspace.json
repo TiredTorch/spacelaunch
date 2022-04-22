@@ -4,7 +4,7 @@
     "spacelaunch": "apps/spacelaunch",
     "spacelaunch-e2e": "apps/spacelaunch-e2e",
     "spacelaunch-layout-shared": "libs/spacelaunch/layout-shared",
-    "spacelaunch-routes-shared": "libs/spacelaunch/routes-shared",
+    "spacelaunch-store-shared": "libs/spacelaunch/store-shared",
     "spacelaunch-ui-shared": "libs/spacelaunch/ui-shared"
   }
 }
