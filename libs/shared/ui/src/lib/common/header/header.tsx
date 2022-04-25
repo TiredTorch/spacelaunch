@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Logo from '../logo/logo';
 import LogoImg from '../../../../../../shared/assets/assets/logo/Logo.svg';
 
-/* eslint-disable-next-line */
 export interface HeaderProps {
   hasLinkToHome: boolean
 }
@@ -35,10 +34,13 @@ const StyledHeaderTitle = styled(Typography)(({ theme }) => ({
 	}
 }));
 
-const LogoWrapper = styled(Box)({
+const LogoWrapper = styled(Box)(({ theme }) => ({
 	position: 'relative',
 	top: '50px',
-});
+	[theme.breakpoints.down('sm')]: {
+		display: 'none'
+	}
+}));
 
 export function Header(props: HeaderProps) {
 

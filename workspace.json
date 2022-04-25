@@ -1,11 +1,12 @@
 {
   "version": 2,
   "projects": {
-    "shared-assets": "libs/shared/assets",
-    "spacelaunch": "apps/spacelaunch",
-    "spacelaunch-e2e": "apps/spacelaunch-e2e",
-    "shared-layout": "libs/shared/layout",
     "redux-store": "libs/redux/store",
-    "shared-ui": "libs/shared/ui"
+    "shared-assets": "libs/shared/assets",
+    "shared-hooks": "libs/shared/hooks",
+    "shared-layout": "libs/shared/layout",
+    "shared-ui": "libs/shared/ui",
+    "spacelaunch": "apps/spacelaunch",
+    "spacelaunch-e2e": "apps/spacelaunch-e2e"
   }
 }
