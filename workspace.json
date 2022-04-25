@@ -4,7 +4,7 @@
     "shared-assets": "libs/shared/assets",
     "spacelaunch": "apps/spacelaunch",
     "spacelaunch-e2e": "apps/spacelaunch-e2e",
-    "spacelaunch-layout-shared": "libs/spacelaunch/layout-shared",
+    "shared-layout": "libs/shared/layout",
     "spacelaunch-store-shared": "libs/spacelaunch/store-shared",
     "spacelaunch-ui-shared": "libs/spacelaunch/ui-shared"
   }

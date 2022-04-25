@@ -1,4 +1,4 @@
-import { SpacelaunchLayout } from '@spacelaunch/spacelaunch/layout-shared';
+import { SpacelaunchLayout } from '@spacelaunch/shared/layout';
 import { EventContent, EventSection } from '@spacelaunch/spacelaunch/ui-shared';
 import { 
 	useGetEventQuery 

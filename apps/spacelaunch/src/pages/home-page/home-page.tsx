@@ -1,4 +1,4 @@
-import { SpacelaunchLayout } from '@spacelaunch/spacelaunch/layout-shared';
+import { SpacelaunchLayout } from '@spacelaunch/shared/layout';
 import { HomeContent, HomeSection } from '@spacelaunch/spacelaunch/ui-shared';
 
 /* eslint-disable-next-line */

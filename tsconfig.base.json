@@ -16,8 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@spacelaunch/shared/assets": ["libs/shared/assets/src/index.ts"],
-      "@spacelaunch/spacelaunch/layout-shared": [
-        "libs/spacelaunch/layout-shared/src/index.ts"
+      "@spacelaunch/shared/layout": [
+        "libs/shared/layout/src/index.ts"
       ],
       "@spacelaunch/spacelaunch/store-shared": [
         "libs/spacelaunch/store-shared/src/index.ts"
