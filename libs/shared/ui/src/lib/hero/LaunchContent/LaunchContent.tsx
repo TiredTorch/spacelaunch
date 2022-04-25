@@ -49,7 +49,7 @@ export const LaunchContent = () => {
 				<StyledListItem>
 					<Timer 
 						time={
-							dayjs(data?.last_updated)
+							dayjs(data?.window_start)
 								.format('MMM. D, YYYY, H:m a')
 						}
 					/>

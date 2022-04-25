@@ -1,4 +1,5 @@
 import { useScrollToTop } from '@spacelaunch/shared/hooks';
+import { Loading } from '@spacelaunch/shared/ui';
 import { Suspense } from 'react';
 import { Route, Routes as RoutesWrapper } from 'react-router';
 import { routeList } from '../routeList';
@@ -8,7 +9,7 @@ export const AppRoutes = () => {
 	useScrollToTop();
 	
 	return (
-		<Suspense fallback={<h1>Loading...</h1>}>
+		<Suspense fallback={<Loading/>}>
 			<RoutesWrapper>
 				{routeList.map((route) => {
 					return(

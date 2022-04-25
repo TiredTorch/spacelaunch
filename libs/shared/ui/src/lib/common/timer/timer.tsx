@@ -1,4 +1,5 @@
 import { Box, styled, Typography } from '@mui/material';
+import Countdown from 'react-countdown';
 
 export interface TimerProps {
   time: string | undefined
@@ -31,7 +32,7 @@ export function Timer(props: TimerProps) {
 	return (
 		<StyledBox>
 			<Typography variant="h4" align='center'>
-				{props.time??'Not found'}
+				<Countdown date={props.time} />
 			</Typography>
 		</StyledBox>
 	);
