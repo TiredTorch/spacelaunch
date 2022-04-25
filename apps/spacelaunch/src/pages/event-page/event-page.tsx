@@ -2,7 +2,7 @@ import { SpacelaunchLayout } from '@spacelaunch/shared/layout';
 import { EventContent, EventSection } from '@spacelaunch/spacelaunch/ui-shared';
 import { 
 	useGetEventQuery 
-} from 'libs/spacelaunch/store-shared/src/lib/eventpage/eventpageApi';
+} from 'libs/redux/store/src/lib/eventpage/eventpageApi';
 import { useParams } from 'react-router';
 
 export function EventPage() {

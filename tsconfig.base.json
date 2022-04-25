@@ -19,8 +19,8 @@
       "@spacelaunch/shared/layout": [
         "libs/shared/layout/src/index.ts"
       ],
-      "@spacelaunch/spacelaunch/store-shared": [
-        "libs/spacelaunch/store-shared/src/index.ts"
+      "@spacelaunch/redux/store": [
+        "libs/redux/store/src/index.ts"
       ],
       "@spacelaunch/spacelaunch/ui-shared": [
         "libs/spacelaunch/ui-shared/src/index.ts"

@@ -5,7 +5,7 @@ import {
 } from '@spacelaunch/spacelaunch/ui-shared';
 import { 
 	useGetRocketQuery 
-} from 'libs/spacelaunch/store-shared/src/lib/rocketpage/rocketpageApi';
+} from 'libs/redux/store/src/lib/rocketpage/rocketpageApi';
 import { useParams } from 'react-router';
 
 /* eslint-disable-next-line */

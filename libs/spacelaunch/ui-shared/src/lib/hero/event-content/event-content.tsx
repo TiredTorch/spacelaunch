@@ -2,7 +2,7 @@ import { ListItem, Stack, styled, Typography } from '@mui/material';
 import dayjs from 'dayjs';
 import { 
 	useGetEventQuery 
-} from 'libs/spacelaunch/store-shared/src/lib/eventpage/eventpageApi';
+} from 'libs/redux/store/src/lib/eventpage/eventpageApi';
 import { useParams } from 'react-router';
 import Button from '../../common/button/button';
 import SubtitleBox from '../../common/subtitle-box/subtitle-box';

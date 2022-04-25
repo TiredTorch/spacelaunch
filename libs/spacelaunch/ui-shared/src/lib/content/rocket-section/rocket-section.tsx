@@ -1,7 +1,7 @@
 import { Stack, styled } from '@mui/material';
 import { 
 	useGetRocketQuery 
-} from 'libs/spacelaunch/store-shared/src/lib/rocketpage/rocketpageApi';
+} from 'libs/redux/store/src/lib/rocketpage/rocketpageApi';
 import { useParams } from 'react-router';
 import DetailItem from './detail-item/detail-item';
 import DetailList from './detail-list/detail-list';

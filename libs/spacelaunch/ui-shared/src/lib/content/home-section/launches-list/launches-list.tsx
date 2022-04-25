@@ -2,7 +2,7 @@ import { Box, styled, Typography } from '@mui/material';
 import { Button } from '@spacelaunch/spacelaunch/ui-shared';
 import { 
 	useGetUpcomingLaunchesQuery 
-} from 'libs/spacelaunch/store-shared/src/lib/homepage/homepageApi';
+} from 'libs/redux/store/src/lib/homepage/homepageApi';
 import { useState } from 'react';
 import LaunchListItem from './launch-list-item/launch-list-item';
 

@@ -2,7 +2,7 @@ import { ListItem, Stack, styled, Typography } from '@mui/material';
 import dayjs from 'dayjs';
 import { 
 	useGetLaunchQuery 
-} from 'libs/spacelaunch/store-shared/src/lib/launchpage/launchpageApi';
+} from 'libs/redux/store/src/lib/launchpage/launchpageApi';
 import { useParams } from 'react-router';
 import Timer from '../../common/timer/timer';
 

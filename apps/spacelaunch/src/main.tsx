@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import App from './app/app';
 import theme from './theme/theme';
-import { store } from '@spacelaunch/spacelaunch/store-shared';
+import { store } from '@spacelaunch/redux/store';
 
 const root = ReactDOMClient.createRoot(
   document.getElementById('root') as HTMLElement

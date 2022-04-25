@@ -5,7 +5,7 @@ import {
 } from '@spacelaunch/spacelaunch/ui-shared';
 import { 
 	useGetLaunchQuery 
-} from 'libs/spacelaunch/store-shared/src/lib/launchpage/launchpageApi';
+} from 'libs/redux/store/src/lib/launchpage/launchpageApi';
 import { useParams } from 'react-router';
 
 export function LaunchPage() {

@@ -3,7 +3,7 @@ import Button from '../../common/button/button';
 import InfoString from '../../common/info-string/info-string';
 import { 
 	useGetLaunchQuery 
-} from 'libs/spacelaunch/store-shared/src/lib/launchpage/launchpageApi';
+} from 'libs/redux/store/src/lib/launchpage/launchpageApi';
 import { useParams } from 'react-router';
 
 const StyledStack = styled(Stack)({

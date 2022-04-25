@@ -1,7 +1,7 @@
 import { ListItem, Stack, styled, Typography } from '@mui/material';
 import { 
 	useGetRocketQuery 
-} from 'libs/spacelaunch/store-shared/src/lib/rocketpage/rocketpageApi';
+} from 'libs/redux/store/src/lib/rocketpage/rocketpageApi';
 import { useParams } from 'react-router';
 
 const StyledStack = styled(Stack)(({ theme }) => ({
