@@ -1,10 +1,5 @@
 import { Box, styled } from '@mui/material';
-
-/* eslint-disable-next-line */
-export interface OverlayProps {
-  bg: string | null | undefined
-  children: React.ReactNode
-}
+import { OverlayProps } from './Overlay.types';
 
 const StyledContainer = styled(Box)(({ theme }) => ({
 	display: 'flex',

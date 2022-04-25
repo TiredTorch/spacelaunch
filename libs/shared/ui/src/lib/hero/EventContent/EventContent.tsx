@@ -28,7 +28,7 @@ const StyledTypography = styled(Typography)({
 	textAlign: 'center',
 });
 
-export function EventContent() {
+export const EventContent = () => {
 	const { id } = useParams();
 
 	const { data } = useGetEventQuery(`${id}`);
@@ -64,6 +64,6 @@ export function EventContent() {
 			</StyledListItem>
 		</StyledStack>
 	);
-}
+};
 
 export default EventContent;

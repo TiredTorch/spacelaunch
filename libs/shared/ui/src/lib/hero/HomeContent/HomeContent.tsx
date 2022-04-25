@@ -15,7 +15,7 @@ const StyledStack = styled(Stack)(({ theme }) => ({
 	},
 }));
 
-export function HomeContent() {
+export const HomeContent = () => {
 	return (
 		<StyledStack spacing={'20px'}>
 			<ListItem>
@@ -38,6 +38,6 @@ export function HomeContent() {
 			</ListItem>
 		</StyledStack>
 	);
-}
+};
 
 export default HomeContent;

@@ -25,7 +25,7 @@ const StyledTypography = styled(Typography)({
 	textAlign: 'center',
 });
 
-export function RocketContent() {
+export const RocketContent = () => {
   
 	const { id } = useParams();
 	const { data } = useGetRocketQuery(`${id}`);
@@ -61,6 +61,6 @@ export function RocketContent() {
 			</StyledListItem>
 		</StyledStack>
 	);
-}
+};
 
 export default RocketContent;

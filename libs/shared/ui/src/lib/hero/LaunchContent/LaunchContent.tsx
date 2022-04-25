@@ -24,7 +24,7 @@ const StyledTypography = styled(Typography)({
 	textAlign: 'center'
 });
 
-export function LaunchContent() {
+export const LaunchContent = () => {
 
 	const { id } = useParams();
 	const { data } = useGetLaunchQuery(`${id}`);
@@ -52,6 +52,6 @@ export function LaunchContent() {
 			</StyledListItem>
 		</StyledStack>
 	);
-}
+};
 
 export default LaunchContent;
