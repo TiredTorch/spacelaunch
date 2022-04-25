@@ -3,7 +3,7 @@ import Button from '../../common/Button/Button';
 import InfoString from '../../common/InfoString/InfoString';
 import { 
 	useGetLaunchQuery 
-} from 'libs/redux/store/src/lib/launchpage/launchpageApi';
+} from '@spacelaunch/redux/store';
 import { useParams } from 'react-router';
 import VideoPlayer from '../../common/VideoPlayer/VideoPlayer';
 import Loading from '../../common/Loading/Loading';

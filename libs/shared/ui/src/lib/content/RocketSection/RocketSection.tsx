@@ -1,14 +1,11 @@
 import { Stack, styled } from '@mui/material';
 import { 
 	useGetRocketQuery 
-} from 'libs/redux/store/src/lib/rocketpage/rocketpageApi';
+} from '@spacelaunch/redux/store';
 import { useParams } from 'react-router';
 import DetailItem from './DetailItem/DetailItem';
 import DetailList from './DetailList/DetailList';
-import FamilyLogo from 'libs/shared/assets/assets/rocketDetails/family.svg';
-import SpecificationsLogo 
-	from 'libs/shared/assets/assets/rocketDetails/specifications.svg';
-import PayloadLogo from 'libs/shared/assets/assets/rocketDetails/payload.svg';
+import { assets } from '@spacelaunch/shared/assets';
 import { DetailListItemProps } 
 	from './DetailList/DetailListItem/DetailListItem.types';
 import Loading from '../../common/Loading/Loading';
@@ -119,16 +116,19 @@ export const RocketSection = () => {
 			<Loading/> :
 			<StyledStack>
 				<DetailsWrapper  direction={{xs: 'column', sm: 'row',}}>
-					<DetailItem logo={FamilyLogo} title={'Family'}>
+					<DetailItem logo={assets.FamilyLogo} title={'Family'}>
 						<DetailList details={familyDetails}/>
 					</DetailItem>
 					<DetailItem 
-						logo={SpecificationsLogo} 
+						logo={assets.SpecificationsLogo} 
 						title={'Specifications'}
 					>
 						<DetailList details={specificationsDetails}/>
 					</DetailItem>
-					<DetailItem logo={PayloadLogo} title={'Payload Capacity'}>
+					<DetailItem 
+						logo={assets.PayloadLogo} 
+						title={'Payload Capacity'}
+					>
 						<DetailList details={payloadDetails}/>
 					</DetailItem>
 				</DetailsWrapper>

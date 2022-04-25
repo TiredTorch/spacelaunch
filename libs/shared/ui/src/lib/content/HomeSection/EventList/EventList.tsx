@@ -1,7 +1,7 @@
 import { Button, Stack, styled, Typography } from '@mui/material';
 import { 
 	useGetUpcomingEventsQuery,
-} from 'libs/redux/store/src/lib/homepage/homepageApi';
+} from '@spacelaunch/redux/store';
 import { useState } from 'react';
 import Loading from '../../../common/Loading/Loading';
 import EventListItem from './EventListItem/EventListItem';

@@ -1,6 +1,6 @@
 import { Box, styled, Typography } from '@mui/material';
 import Logo from '../Logo/Logo';
-import LogoImage from '../../../../../../shared/assets/assets/logo/Logo.svg';
+import { assets } from '@spacelaunch/shared/assets';
 
 
 const StyledBox = styled(Box)(() => ({
@@ -25,7 +25,7 @@ export const Footer = () => {
 		<StyledBox>
 			<Logo
 				logoSize='sm'
-				src={LogoImage}
+				src={assets.Logo}
 			/>
 			<StyledCopyrights variant="h5">
         © 2021 Copyright

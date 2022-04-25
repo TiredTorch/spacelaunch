@@ -2,7 +2,7 @@ import { AppBar, Box, Typography } from '@mui/material';
 import { styled } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
-import LogoImg from '../../../../../../shared/assets/assets/logo/Logo.svg';
+import { assets } from '@spacelaunch/shared/assets';
 import { HeaderProps } from './Header.types';
 
 const StyledHeader = styled(AppBar)(({ theme }) => ({
@@ -60,7 +60,7 @@ export const Header = (props: HeaderProps) => {
 			) : ''
 			}
 			<LogoWrapper>
-				<Logo logoSize={'md'} src={LogoImg}/>
+				<Logo logoSize={'md'} src={assets.Logo}/>
 			</LogoWrapper>
 		</StyledHeader>
 	);

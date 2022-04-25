@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
 import SubtitleBox from '../../../../common/SubtitleBox/SubtitleBox';
 import { EventListItemProps } from './EventListItem.types';
-import NotFoundImg from '../../../../../../../assets/assets/viewPage/404.png';
+import { assets } from '@spacelaunch/shared/assets';
 
 
 const StyledStack = styled(Stack)(({ theme }) => ({
@@ -27,7 +27,7 @@ const StyledStack = styled(Stack)(({ theme }) => ({
 export const EventListItem = (props: EventListItemProps) => {
 
 	const img = props.img ? 
-		props.img : NotFoundImg;
+		props.img : assets.NotFoundPage;
 
 	return (
 		<StyledStack spacing={'15px'}>

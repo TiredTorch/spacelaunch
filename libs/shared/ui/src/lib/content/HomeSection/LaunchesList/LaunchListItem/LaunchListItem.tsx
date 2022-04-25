@@ -2,7 +2,7 @@ import { Box, styled, Typography } from '@mui/material';
 import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
 import SubtitleBox from '../../../../common/SubtitleBox/SubtitleBox';
-import NotFoundImg from '../../../../../../../assets/assets/viewPage/404.png';
+import { assets } from '@spacelaunch/shared/assets';
 import { LaunchListItemProps } from './LaunchListItem.types';
 
 const StyledBox = styled(Box)(({theme}) => ({
@@ -23,7 +23,7 @@ const StyledSubtitleOverlay = styled(Box)({
 
 export const LaunchListItem = (props: LaunchListItemProps) => {
 	const img = props.img ? 
-		props.img : NotFoundImg;
+		props.img : assets.NotFoundPage;
 
 	return (
 		<StyledBox>

@@ -1,7 +1,7 @@
 import { ListItem, Stack, styled, Typography } from '@mui/material';
 import { 
 	useGetRocketQuery 
-} from 'libs/redux/store/src/lib/rocketpage/rocketpageApi';
+} from '@spacelaunch/redux/store';
 import { useParams } from 'react-router';
 import Loading from '../../common/Loading/Loading';
 

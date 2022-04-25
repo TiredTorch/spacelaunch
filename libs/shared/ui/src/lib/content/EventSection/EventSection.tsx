@@ -2,7 +2,7 @@ import { Box, Stack, styled, Typography } from '@mui/material';
 import dayjs from 'dayjs';
 import { 
 	useGetEventQuery 
-} from 'libs/redux/store/src/lib/eventpage/eventpageApi';
+} from '@spacelaunch/redux/store';
 import { useParams } from 'react-router';
 import InfoString from '../../common/InfoString/InfoString';
 import Loading from '../../common/Loading/Loading';

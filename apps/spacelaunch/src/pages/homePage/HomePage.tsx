@@ -1,8 +1,6 @@
 import { SpacelaunchLayout } from '@spacelaunch/shared/layout';
 import { HomeContent, HomeSection } from '@spacelaunch/shared/ui';
-import BG from
-	// eslint-disable-next-line max-len
-	'../../../../../libs/shared/assets/assets/background/homepageBackground.svg';
+import { assets } from '@spacelaunch/shared/assets';
 
 export const HomePage = () => {
 	return (
@@ -11,7 +9,7 @@ export const HomePage = () => {
 			contentComponent={HomeSection} 
 			settings={{
 				hasHeaderLink: false,
-				bg: BG
+				bg: assets.HomepageBG
 			}}/>
 	);
 };
