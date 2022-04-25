@@ -5,6 +5,7 @@
     "shared-assets": "libs/shared/assets",
     "shared-hooks": "libs/shared/hooks",
     "shared-layout": "libs/shared/layout",
+    "shared-theme": "libs/shared/theme",
     "shared-ui": "libs/shared/ui",
     "spacelaunch": "apps/spacelaunch",
     "spacelaunch-e2e": "apps/spacelaunch-e2e"

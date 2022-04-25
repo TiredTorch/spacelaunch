@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import App from './app/app';
-import theme from './theme/theme';
+import theme from '../../../libs/shared/theme/src/lib/theme';
 import { store } from '@spacelaunch/redux/store';
 
 const root = ReactDOMClient.createRoot(
