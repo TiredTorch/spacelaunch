@@ -1,5 +1,5 @@
 import { Box, styled, Typography } from '@mui/material';
-import { Button } from '@spacelaunch/spacelaunch/ui-shared';
+import { Button } from '@spacelaunch/shared/ui';
 import { 
 	useGetUpcomingLaunchesQuery 
 } from 'libs/redux/store/src/lib/homepage/homepageApi';

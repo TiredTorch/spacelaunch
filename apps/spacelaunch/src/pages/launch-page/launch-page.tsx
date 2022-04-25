@@ -2,7 +2,7 @@ import { SpacelaunchLayout } from '@spacelaunch/shared/layout';
 import { 
 	LaunchContent, 
 	LaunchSection 
-} from '@spacelaunch/spacelaunch/ui-shared';
+} from '@spacelaunch/shared/ui';
 import { 
 	useGetLaunchQuery 
 } from 'libs/redux/store/src/lib/launchpage/launchpageApi';

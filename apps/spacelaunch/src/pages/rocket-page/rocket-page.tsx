@@ -2,7 +2,7 @@ import { SpacelaunchLayout } from '@spacelaunch/shared/layout';
 import { 
 	RocketContent, 
 	RocketSection 
-} from '@spacelaunch/spacelaunch/ui-shared';
+} from '@spacelaunch/shared/ui';
 import { 
 	useGetRocketQuery 
 } from 'libs/redux/store/src/lib/rocketpage/rocketpageApi';

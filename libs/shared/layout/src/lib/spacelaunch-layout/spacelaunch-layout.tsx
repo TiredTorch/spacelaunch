@@ -4,7 +4,7 @@ import {
 	Footer, 
 	Header, 
 	Overlay 
-} from '@spacelaunch/spacelaunch/ui-shared';
+} from '@spacelaunch/shared/ui';
 
 export interface SpacelaunchLayoutProps {
   heroComponent: FC,

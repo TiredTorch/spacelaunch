@@ -1,5 +1,5 @@
 import { SpacelaunchLayout } from '@spacelaunch/shared/layout';
-import { HomeContent, HomeSection } from '@spacelaunch/spacelaunch/ui-shared';
+import { HomeContent, HomeSection } from '@spacelaunch/shared/ui';
 
 /* eslint-disable-next-line */
 export interface HomePageProps {}

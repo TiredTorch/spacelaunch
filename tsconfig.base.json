@@ -22,8 +22,8 @@
       "@spacelaunch/redux/store": [
         "libs/redux/store/src/index.ts"
       ],
-      "@spacelaunch/spacelaunch/ui-shared": [
-        "libs/spacelaunch/ui-shared/src/index.ts"
+      "@spacelaunch/shared/ui": [
+        "libs/shared/ui/src/index.ts"
       ]
     }
   },

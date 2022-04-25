@@ -6,6 +6,6 @@
     "spacelaunch-e2e": "apps/spacelaunch-e2e",
     "shared-layout": "libs/shared/layout",
     "redux-store": "libs/redux/store",
-    "spacelaunch-ui-shared": "libs/spacelaunch/ui-shared"
+    "shared-ui": "libs/shared/ui"
   }
 }

@@ -1,5 +1,5 @@
 import { SpacelaunchLayout } from '@spacelaunch/shared/layout';
-import { EventContent, EventSection } from '@spacelaunch/spacelaunch/ui-shared';
+import { EventContent, EventSection } from '@spacelaunch/shared/ui';
 import { 
 	useGetEventQuery 
 } from 'libs/redux/store/src/lib/eventpage/eventpageApi';
