@@ -1,5 +1,5 @@
 import { Box, styled, Typography } from '@mui/material';
-import Logo from '../logo/logo';
+import Logo from '../Logo/Logo';
 import LogoImage from '../../../../../../shared/assets/assets/logo/Logo.svg';
 
 
@@ -16,7 +16,11 @@ const StyledCopyrights = styled(Typography)(({ theme }) => ({
 	color: theme.palette.text.secondary
 }));
 
-export function Footer() {
+/**
+ * 
+ * @returns footer section of website
+ */
+export const Footer = () => {
 	return (
 		<StyledBox>
 			<Logo
@@ -28,6 +32,6 @@ export function Footer() {
 			</StyledCopyrights>
 		</StyledBox>
 	);
-}
+};
 
 export default Footer;

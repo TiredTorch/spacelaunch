@@ -4,7 +4,7 @@ import {
 	useGetLaunchQuery 
 } from 'libs/redux/store/src/lib/launchpage/launchpageApi';
 import { useParams } from 'react-router';
-import Timer from '../../common/timer/timer';
+import Timer from '../../common/Timer/Timer';
 
 const StyledStack = styled(Stack)(({ theme }) => ({
 	width: '80vw',

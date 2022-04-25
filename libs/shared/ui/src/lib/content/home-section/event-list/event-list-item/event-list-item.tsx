@@ -1,7 +1,7 @@
 import { Box, Stack, styled, Typography } from '@mui/material';
 import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
-import SubtitleBox from '../../../../common/subtitle-box/subtitle-box';
+import SubtitleBox from '../../../../common/SubtitleBox/SubtitleBox';
 
 /* eslint-disable-next-line */
 export interface EventListItemProps {

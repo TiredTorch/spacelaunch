@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Header from './Header';
+import VideoPlayer from './VideoPlayer';
 
-describe('Header', () => {
+describe('VideoPlayed', () => {
 	it('should render successfully', () => {
-		const { baseElement } = render(<Header hasLinkToHome={false} />);
+		const { baseElement } = render(<VideoPlayer videoSrc={''} />);
 		expect(baseElement).toBeTruthy();
 	});
 });

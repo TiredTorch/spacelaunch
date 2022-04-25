@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Header from './Header';
+import SubtitleBox from './SubtitleBox';
 
-describe('Header', () => {
+describe('SubtitleBox', () => {
 	it('should render successfully', () => {
-		const { baseElement } = render(<Header hasLinkToHome={false} />);
+		const { baseElement } = render(<SubtitleBox title={''} />);
 		expect(baseElement).toBeTruthy();
 	});
 });

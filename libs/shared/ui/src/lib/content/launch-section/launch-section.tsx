@@ -1,6 +1,6 @@
 import { Stack, styled, Typography } from '@mui/material';
-import Button from '../../common/button/button';
-import InfoString from '../../common/info-string/info-string';
+import Button from '../../common/Button/Button';
+import InfoString from '../../common/InfoString/InfoString';
 import { 
 	useGetLaunchQuery 
 } from 'libs/redux/store/src/lib/launchpage/launchpageApi';

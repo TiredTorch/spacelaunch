@@ -1,14 +1,7 @@
 import { styled, Typography } from '@mui/material';
 import { Button as MUIButton } from '@mui/material';
 import { useNavigate } from 'react-router';
-
-/* eslint-disable-next-line */
-export interface ButtonProps {
-  userSize: 'sm' | 'md' | 'rp',
-  title: string,
-  url?: string
-	handler?: () => void
-}
+import { ButtonProps } from './Button.types';
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
 	color: theme.palette.text.primary,
@@ -49,9 +42,16 @@ const StyledButtonResp = styled(StyledButton)(({ theme }) => ({
 	}
 }));
 
-
-
-export function Button(props: ButtonProps) {
+/**
+ * 
+ * @param {string} props.userSize custom size of button
+ * @param {string} props.title title of the button 
+ * @param {string} props.url url to redirect to it after clicking
+ * @param {string} props.handler handler to use after clicking
+ * 
+ * @returns button component
+ */
+export const Button = (props: ButtonProps) => {
 	const navigate = useNavigate();
 
 	const handleRedirect = () => {
@@ -61,7 +61,6 @@ export function Button(props: ButtonProps) {
 	const handleAction = 
 		props.url ? handleRedirect : 
 			(props.handler ? props.handler : () => '');
-
 
 	switch (props.userSize) {
 	case 'sm':
@@ -99,6 +98,6 @@ export function Button(props: ButtonProps) {
 			<h1>Smth went wrong</h1>
 		);
 	}
-}
+};
 
 export default Button;

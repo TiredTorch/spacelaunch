@@ -1,10 +1,8 @@
 import { CardMedia } from '@mui/material';
+import { VideoPlayedProps } from './VideoPlayer.types';
 
-export interface VideoPlayedProps {
-  videoSrc: string 
-}
 
-export function VideoPlayer(props: VideoPlayedProps) {
+export const VideoPlayer = (props: VideoPlayedProps) => {
 	return (
 		<CardMedia 
 			component={'iframe'} 
@@ -20,6 +18,6 @@ export function VideoPlayer(props: VideoPlayedProps) {
 			
 		/>
 	);
-}
+};
 
 export default VideoPlayer;

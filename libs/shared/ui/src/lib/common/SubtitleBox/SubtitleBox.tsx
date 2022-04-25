@@ -1,9 +1,6 @@
 import { Chip, styled } from '@mui/material';
+import { SubtitleBoxProps } from './SubtitleBox.types';
 
-/* eslint-disable-next-line */
-export interface SubtitleBoxProps {
-  title: string
-}
 
 const StyledChip = styled(Chip)(({ theme }) => ({
 	background: '#4A00E0',
@@ -28,10 +25,15 @@ const StyledChip = styled(Chip)(({ theme }) => ({
 	},
 }));
 
-export function SubtitleBox(props: SubtitleBoxProps) {
+/**
+ * 
+ * @param props.title title of the box 
+ * @returns subtitle box
+ */
+export const SubtitleBox = (props: SubtitleBoxProps) => {
 	return (
 		<StyledChip label={props.title}/>
 	);
-}
+};
 
 export default SubtitleBox;

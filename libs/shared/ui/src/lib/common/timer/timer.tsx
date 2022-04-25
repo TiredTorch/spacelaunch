@@ -1,6 +1,5 @@
 import { Box, styled, Typography } from '@mui/material';
 
-/* eslint-disable-next-line */
 export interface TimerProps {
   time: string | undefined
 }

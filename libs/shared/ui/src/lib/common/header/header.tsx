@@ -1,12 +1,9 @@
 import { AppBar, Box, Typography } from '@mui/material';
 import { styled } from '@mui/material';
 import { Link } from 'react-router-dom';
-import Logo from '../logo/logo';
+import Logo from '../Logo/Logo';
 import LogoImg from '../../../../../../shared/assets/assets/logo/Logo.svg';
-
-export interface HeaderProps {
-  hasLinkToHome: boolean
-}
+import { HeaderProps } from './Header.types';
 
 const StyledHeader = styled(AppBar)(({ theme }) => ({
 	zIndex: '1251',
@@ -42,9 +39,12 @@ const LogoWrapper = styled(Box)(({ theme }) => ({
 	}
 }));
 
-export function Header(props: HeaderProps) {
-
-  
+/**
+ * 
+ * @param {boolean} props.hasLinkToHome is header has link to home  
+ * @returns 
+ */
+export const Header = (props: HeaderProps) => {
 	return (
 		<StyledHeader sx={{
 			justifyContent: props.hasLinkToHome ? 'space-between' : 'center'
@@ -64,6 +64,6 @@ export function Header(props: HeaderProps) {
 			</LogoWrapper>
 		</StyledHeader>
 	);
-}
+};
 
 export default Header;

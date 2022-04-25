@@ -1,5 +1,5 @@
 import { Stack, styled, Typography } from '@mui/material';
-import Logo from '../../../common/logo/logo';
+import Logo from '../../../common/Logo/Logo';
 
 /* eslint-disable-next-line */
 export interface DetailItemProps {

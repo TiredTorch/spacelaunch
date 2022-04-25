@@ -4,8 +4,8 @@ import {
 	useGetEventQuery 
 } from 'libs/redux/store/src/lib/eventpage/eventpageApi';
 import { useParams } from 'react-router';
-import Button from '../../common/button/button';
-import SubtitleBox from '../../common/subtitle-box/subtitle-box';
+import Button from '../../common/Button/Button';
+import SubtitleBox from '../../common/SubtitleBox/SubtitleBox';
 
 const StyledStack = styled(Stack)(({ theme }) => ({
 	width: '40vw',
