@@ -6,9 +6,11 @@ import {
 import { useParams } from 'react-router';
 import InfoString from '../../common/InfoString/InfoString';
 import SubtitleBox from '../../common/SubtitleBox/SubtitleBox';
-import EventList from '../HomeSection/event-list/event-list';
+import VideoPlayer from '../../common/VideoPlayer/VideoPlayer';
+import EventList from '../HomeSection/EventList/EventList';
 
 const StyledStack = styled(Stack)(({ theme }) => ({
+	alignItems: 'center',
 	justifyContent: 'space-around',
 	'&.innerStack': {
 		width: '40%',
@@ -35,9 +37,9 @@ export const EventSection = () => {
 
 	return (
 		<StyledStack>
-			{/* {data?.video_url ?
-				<VideoPlayer videoSrc={data?.video_url}/> : ''
-			} */}
+			{data?.video_url ?
+				<VideoPlayer videoSrc={data?.video_url}/> : <></>
+			} 
 			<StyledInformationWrapper>
 				<Box component={'img'} 
 					src={data?.launches[0].image}

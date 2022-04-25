@@ -1,20 +1,11 @@
-import { CardMedia } from '@mui/material';
 import { VideoPlayedProps } from './VideoPlayer.types';
-
+import ReactPlayer from 'react-player';
 
 export const VideoPlayer = (props: VideoPlayedProps) => {
 	return (
-		<CardMedia 
-			component={'iframe'} 
-			src={`${props.videoSrc}&output=embed`}
-			loading="lazy"
-			allow="accelerometer"
-			sx={{
-				margin: 'auto',
-				width: '1180px',
-				height: '711px',
-				border: 'none'
-			}}
+		<ReactPlayer 
+			url={props.videoSrc} controls={true}
+			width='80%' height={'70vmin'}
 			
 		/>
 	);

@@ -5,6 +5,7 @@ import {
 	useGetLaunchQuery 
 } from 'libs/redux/store/src/lib/launchpage/launchpageApi';
 import { useParams } from 'react-router';
+import VideoPlayer from '../../common/VideoPlayer/VideoPlayer';
 
 const StyledStack = styled(Stack)({
 	margin: '30px 0',
@@ -19,9 +20,9 @@ export const LaunchSection = () => {
 
 	return (
 		<StyledStack>
-			{/* {data?.vidURLs?.length ? 
+			{data?.vidURLs?.length ? 
 				<VideoPlayer videoSrc={data?.vidURLs[0].url}/> : ''
-			} */}
+			} 
 			<StyledStack>
 				<Typography variant="h3">
           Overview

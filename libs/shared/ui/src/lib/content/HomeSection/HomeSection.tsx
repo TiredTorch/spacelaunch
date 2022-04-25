@@ -1,5 +1,5 @@
 import { Stack } from '@mui/material';
-import EventList from './event-list/event-list';
+import EventList from './EventList/EventList';
 import LaunchesList from './LaunchesList/LaunchesList';
 
 export const HomeSection = () => {
