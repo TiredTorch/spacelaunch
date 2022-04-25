@@ -3,6 +3,7 @@ import {
 	useGetRocketQuery 
 } from 'libs/redux/store/src/lib/rocketpage/rocketpageApi';
 import { useParams } from 'react-router';
+import Loading from '../../common/Loading/Loading';
 
 const StyledStack = styled(Stack)(({ theme }) => ({
 	width: '40vw',
@@ -28,38 +29,40 @@ const StyledTypography = styled(Typography)({
 export const RocketContent = () => {
   
 	const { id } = useParams();
-	const { data } = useGetRocketQuery(`${id}`);
+	const { data, isLoading } = useGetRocketQuery(`${id}`);
   
 	return (
-		<StyledStack spacing={{
-			xl: '30px', 
-			lg: '20px', 
-			md: '30px', 
-			sm: '20px', 
-			xs: '10px'
-		}}>
-			<StyledListItem>
-				<StyledTypography variant="h1">
-					{data?.full_name??'Not found'}
-				</StyledTypography>
-			</StyledListItem>
-			<StyledListItem>
-				<StyledTypography variant="h2" fontWeight={400}>
-					{`${data?.launch_service_provider.name} 
+		isLoading ? 
+			<Loading/> :
+			<StyledStack spacing={{
+				xl: '30px', 
+				lg: '20px', 
+				md: '30px', 
+				sm: '20px', 
+				xs: '10px'
+			}}>
+				<StyledListItem>
+					<StyledTypography variant="h1">
+						{data?.full_name??'Not found'}
+					</StyledTypography>
+				</StyledListItem>
+				<StyledListItem>
+					<StyledTypography variant="h2" fontWeight={400}>
+						{`${data?.launch_service_provider.name} 
           (${data?.launch_service_provider.abbrev})`}
-				</StyledTypography>
-			</StyledListItem>
-			<StyledListItem>
-				<StyledTypography variant="h2">
-					{data?.launch_service_provider.founding_year}
-				</StyledTypography>
-			</StyledListItem>
-			<StyledListItem>
-				<StyledTypography variant="h5">
-					{data?.description}
-				</StyledTypography>
-			</StyledListItem>
-		</StyledStack>
+					</StyledTypography>
+				</StyledListItem>
+				<StyledListItem>
+					<StyledTypography variant="h2">
+						{data?.launch_service_provider.founding_year}
+					</StyledTypography>
+				</StyledListItem>
+				<StyledListItem>
+					<StyledTypography variant="h5">
+						{data?.description}
+					</StyledTypography>
+				</StyledListItem>
+			</StyledStack>
 	);
 };
 

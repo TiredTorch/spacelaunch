@@ -11,6 +11,7 @@ import SpecificationsLogo
 import PayloadLogo from 'libs/shared/assets/assets/rocketDetails/payload.svg';
 import { DetailListItemProps } 
 	from './DetailList/DetailListItem/DetailListItem.types';
+import Loading from '../../common/Loading/Loading';
 
 const StyledStack = styled(Stack)({
 	flexDirection: 'column',
@@ -31,7 +32,7 @@ export const RocketSection = () => {
   
   
 	const { id } = useParams();
-	const { data } = useGetRocketQuery(`${id}`);
+	const { data, isLoading } = useGetRocketQuery(`${id}`);
   
 
 	const familyDetails: Array<DetailListItemProps> = [
@@ -114,19 +115,24 @@ export const RocketSection = () => {
 	];
 
 	return (
-		<StyledStack>
-			<DetailsWrapper  direction={{xs: 'column', sm: 'row',}}>
-				<DetailItem logo={FamilyLogo} title={'Family'}>
-					<DetailList details={familyDetails}/>
-				</DetailItem>
-				<DetailItem logo={SpecificationsLogo} title={'Specifications'}>
-					<DetailList details={specificationsDetails}/>
-				</DetailItem>
-				<DetailItem logo={PayloadLogo} title={'Payload Capacity'}>
-					<DetailList details={payloadDetails}/>
-				</DetailItem>
-			</DetailsWrapper>
-		</StyledStack>
+		isLoading ?
+			<Loading/> :
+			<StyledStack>
+				<DetailsWrapper  direction={{xs: 'column', sm: 'row',}}>
+					<DetailItem logo={FamilyLogo} title={'Family'}>
+						<DetailList details={familyDetails}/>
+					</DetailItem>
+					<DetailItem 
+						logo={SpecificationsLogo} 
+						title={'Specifications'}
+					>
+						<DetailList details={specificationsDetails}/>
+					</DetailItem>
+					<DetailItem logo={PayloadLogo} title={'Payload Capacity'}>
+						<DetailList details={payloadDetails}/>
+					</DetailItem>
+				</DetailsWrapper>
+			</StyledStack>
 	);
 };
 

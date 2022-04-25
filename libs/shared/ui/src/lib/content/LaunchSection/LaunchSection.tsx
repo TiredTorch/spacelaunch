@@ -6,6 +6,7 @@ import {
 } from 'libs/redux/store/src/lib/launchpage/launchpageApi';
 import { useParams } from 'react-router';
 import VideoPlayer from '../../common/VideoPlayer/VideoPlayer';
+import Loading from '../../common/Loading/Loading';
 
 const StyledStack = styled(Stack)({
 	margin: '30px 0',
@@ -16,57 +17,59 @@ const StyledStack = styled(Stack)({
 export const LaunchSection = () => {
 
 	const { id } = useParams();
-	const { data } = useGetLaunchQuery(`${id}`);
+	const { data, isLoading } = useGetLaunchQuery(`${id}`);
 
 	return (
-		<StyledStack>
-			{data?.vidURLs?.length ? 
-				<VideoPlayer videoSrc={data?.vidURLs[0].url}/> : ''
-			} 
+		isLoading ?
+			<Loading/> :
 			<StyledStack>
-				<Typography variant="h3">
+				{data?.vidURLs?.length ? 
+					<VideoPlayer videoSrc={data?.vidURLs[0].url}/> : ''
+				} 
+				<StyledStack>
+					<Typography variant="h3">
           Overview
-				</Typography>
-				<InfoString 
-					title={'Destination'} 
-					info={
-						data?.rocket?.spacecraft_stage ? 
-							data?.rocket?.spacecraft_stage.destination :
-							'-'
-					}
-				/>
-				<InfoString title={'Mission'} info={
-					data?.mission.type??'-'
-				}/>
-				<Typography variant="h5" 
-					align="center" marginTop={'20px'} width={'100%'}
-					padding={{lg: '0 200px', md: '0 100px', xs: '0 100px'}}>
-					{data?.mission.description??'Not found'}
-				</Typography>
-			</StyledStack>
-			<StyledStack>
-				<Typography variant="h3">
-					{data?.rocket.configuration.full_name??'Not found'}
-				</Typography>
-				<InfoString title={'Family'} info={
-					data?.rocket.configuration.family??'-'
-				}/>
-				<InfoString title={'Configuration'} info={
-					data?.rocket.configuration.name??'-'
-				}/>
-				<Typography variant="h5" 
-					align="center" 
-					margin={'20px 0'} 
-					padding={{lg: '0 200px', md: '0 100px', xs: '0 100px'}}
-				>
-					{data?.rocket.configuration.description??'Not found'}
-				</Typography>
-				<Button userSize={'rp'} 
-					title={'See Rocket Details'} 
-					url={`/rocket/${data?.rocket.configuration.id}`}
-				/>
-			</StyledStack>
-			{/* <CardMedia
+					</Typography>
+					<InfoString 
+						title={'Destination'} 
+						info={
+							data?.rocket?.spacecraft_stage ? 
+								data?.rocket?.spacecraft_stage.destination :
+								'-'
+						}
+					/>
+					<InfoString title={'Mission'} info={
+						data?.mission.type??'-'
+					}/>
+					<Typography variant="h5" 
+						align="center" marginTop={'20px'} width={'100%'}
+						padding={{lg: '0 200px', md: '0 100px', xs: '0 100px'}}>
+						{data?.mission.description??'Not found'}
+					</Typography>
+				</StyledStack>
+				<StyledStack>
+					<Typography variant="h3">
+						{data?.rocket.configuration.full_name??'Not found'}
+					</Typography>
+					<InfoString title={'Family'} info={
+						data?.rocket.configuration.family??'-'
+					}/>
+					<InfoString title={'Configuration'} info={
+						data?.rocket.configuration.name??'-'
+					}/>
+					<Typography variant="h5" 
+						align="center" 
+						margin={'20px 0'} 
+						padding={{lg: '0 200px', md: '0 100px', xs: '0 100px'}}
+					>
+						{data?.rocket.configuration.description??'Not found'}
+					</Typography>
+					<Button userSize={'rp'} 
+						title={'See Rocket Details'} 
+						url={`/rocket/${data?.rocket.configuration.id}`}
+					/>
+				</StyledStack>
+				{/* <CardMedia
 				component={'iframe'} 
 				src="https://maps.google.com/maps?q='28.56194122',
 				'-80.57735736'&hl=es&z=14&amp;output=embed" 
@@ -78,7 +81,7 @@ export const LaunchSection = () => {
 					border: 'none'
 				}}
 			/> */}
-		</StyledStack>
+			</StyledStack>
 	);
 };
 

@@ -1,3 +1,4 @@
+export * from './lib/common/Loading/Loading';
 export * from './lib/content/HomeSection/LaunchesList/LaunchesList';
 export * from './lib/content/HomeSection/EventList/EventList';
 export * from './lib/content/RocketSection/RocketSection';

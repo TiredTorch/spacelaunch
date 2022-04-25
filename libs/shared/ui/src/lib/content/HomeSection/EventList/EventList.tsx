@@ -3,6 +3,7 @@ import {
 	useGetUpcomingEventsQuery,
 } from 'libs/redux/store/src/lib/homepage/homepageApi';
 import { useState } from 'react';
+import Loading from '../../../common/Loading/Loading';
 import EventListItem from './EventListItem/EventListItem';
 
 const StyledStackRow = styled(Stack)(({theme}) => ({
@@ -31,8 +32,7 @@ const StyledArrowButton = styled(Button)({
 export const EventList = () => {
 
 	const [page, setPage] = useState(0);
-	// eslint-disable-next-line 
-	const { data, isLoading, error } = useGetUpcomingEventsQuery(page);
+	const { data, isLoading } = useGetUpcomingEventsQuery(page);
 
 	const currentEventListItems = data?.results;
 
@@ -48,36 +48,38 @@ export const EventList = () => {
 	};
 
 	return (
-		<StyledStackColumn>
-			<StyledStackRow>
-				<Typography variant="h3">
-          Recent Events
-				</Typography>
+		isLoading ?
+			<Loading/> :
+			<StyledStackColumn>
 				<StyledStackRow>
-					<StyledArrowButton onClick={handlePrevPage}>
-						<Typography variant="h3">
+					<Typography variant="h3">
+          Recent Events
+					</Typography>
+					<StyledStackRow>
+						<StyledArrowButton onClick={handlePrevPage}>
+							<Typography variant="h3">
               ←
-						</Typography>
-					</StyledArrowButton>
-					<StyledArrowButton onClick={handleNextPage}>
-						<Typography variant="h3">
+							</Typography>
+						</StyledArrowButton>
+						<StyledArrowButton onClick={handleNextPage}>
+							<Typography variant="h3">
               →
-						</Typography>
-					</StyledArrowButton>
+							</Typography>
+						</StyledArrowButton>
+					</StyledStackRow>
 				</StyledStackRow>
-			</StyledStackRow>
-			<StyledStackRow  className='main'>
-				{currentEventListItems?.map((item) => (
-					<EventListItem
-						url={`/event/${item.id}`}
-						dataTitle={item.date}
-						eventTitle={item.name}
-						key={`event ${item.id}`} 
-						img={item.feature_image}					
-					/>
-				))}
-			</StyledStackRow>
-		</StyledStackColumn>
+				<StyledStackRow  className='main'>
+					{currentEventListItems?.map((item) => (
+						<EventListItem
+							url={`/event/${item.id}`}
+							dataTitle={item.date}
+							eventTitle={item.name}
+							key={`event ${item.id}`} 
+							img={item.feature_image}					
+						/>
+					))}
+				</StyledStackRow>
+			</StyledStackColumn>
 	);
 };
 
