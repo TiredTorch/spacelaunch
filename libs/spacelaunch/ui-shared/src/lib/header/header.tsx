@@ -1,6 +1,8 @@
-import { AppBar, Typography } from '@mui/material';
+import { AppBar, Box, Typography } from '@mui/material';
 import { styled } from '@mui/material';
 import { Link } from 'react-router-dom';
+import Logo from '../common/logo/logo';
+import LogoImg from '../../../../../shared/assets/assets/logo/Logo.svg';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {
@@ -11,14 +13,17 @@ const StyledHeader = styled(AppBar)(({ theme }) => ({
 	zIndex: '1251',
 	backgroundColor: 'rgba(0, 0, 0, 0.2)',
 	height: '100px',
+	flexDirection: 'row',
+	flexWrap: 'wrap',
   
 	display: 'flex',
-	justifyContent: 'center',
+	alignItems: 'center',
 
-	paddingLeft: '20%',
+	padding: '0 20%',
 
 	[theme.breakpoints.down('md')]: {
-		paddingLeft: '0',
+		alignItems: 'center',
+		padding: '0 5%',
 	}
 }));
 
@@ -30,11 +35,18 @@ const StyledHeaderTitle = styled(Typography)(({ theme }) => ({
 	}
 }));
 
+const LogoWrapper = styled(Box)({
+	position: 'relative',
+	top: '50px',
+});
+
 export function Header(props: HeaderProps) {
 
   
 	return (
-		<StyledHeader>
+		<StyledHeader sx={{
+			justifyContent: props.hasLinkToHome ? 'space-between' : 'center'
+		}}>
       
 			{props.hasLinkToHome ? (
 				<Link to="/" style={{ textDecoration: 'none'}}>
@@ -43,9 +55,11 @@ export function Header(props: HeaderProps) {
 					</StyledHeaderTitle>
 				</Link>
           
-			) : 
-				''
+			) : ''
 			}
+			<LogoWrapper>
+				<Logo logoSize={'md'} src={LogoImg}/>
+			</LogoWrapper>
 		</StyledHeader>
 	);
 }

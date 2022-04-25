@@ -1,8 +1,9 @@
 import { Box, styled, Typography } from '@mui/material';
 import Logo from '../common/logo/logo';
+import LogoImage from '../../../../../shared/assets/assets/logo/Logo.svg';
 
 
-const StyledBox = styled(Box)(({ theme }) => ({
+const StyledBox = styled(Box)(() => ({
 	width: '100vw',
 	height: '5vh',
 
@@ -20,7 +21,7 @@ export function Footer() {
 		<StyledBox>
 			<Logo
 				logoSize='sm'
-				src="https://www.pngmart.com/files/16/official-Google-Logo-PNG-Image.png"
+				src={LogoImage}
 			/>
 			<StyledCopyrights variant="h5">
         © 2021 Copyright
