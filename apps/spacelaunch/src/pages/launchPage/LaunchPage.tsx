@@ -8,7 +8,7 @@ import {
 } from 'libs/redux/store/src/lib/launchpage/launchpageApi';
 import { useParams } from 'react-router';
 
-export function LaunchPage() {
+export const LaunchPage = () => {
 	
 	const { id } = useParams();
 	const { data } = useGetLaunchQuery(`${id}`);
@@ -22,6 +22,6 @@ export function LaunchPage() {
 				bg: data?.image
 			}}/>
 	);
-}
+};
 
 export default LaunchPage;

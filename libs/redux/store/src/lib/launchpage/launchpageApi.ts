@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { Launches } from './launchpageTypes';
+import { Launches } from './launchpage.types';
 
 export const launchpageApi = createApi({
 	reducerPath: 'api/launch',

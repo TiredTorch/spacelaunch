@@ -1,1 +1,1 @@
-export * from './lib/spacelaunch-layout/spacelaunch-layout';
+export * from './lib/SpacelaunchLayout/SpacelaunchLayout';

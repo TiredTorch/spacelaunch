@@ -1,31 +1,32 @@
 import { lazy } from 'react';
+import { ROUTE } from '../../../../libs/shared/enums/src/lib/enums';
 
 export type RouteType = {
   path: string,
   page: React.LazyExoticComponent<any>
 }
 
-const LazyHomePage = lazy(() => import('../pages/home-page/home-page'));
-const LazyEventPage = lazy(() => import('../pages/event-page/event-page'));
-const LazyRocketPage = lazy(() => import('../pages/rocket-page/rocket-page'));
-const LazyLaunchPage = lazy(() => import('../pages/launch-page/launch-page'));
+const LazyHomePage = lazy(() => import('../pages/homePage/HomePage'));
+const LazyEventPage = lazy(() => import('../pages/eventPage/EventPage'));
+const LazyRocketPage = lazy(() => import('../pages/rocketPage/RocketPage'));
+const LazyLaunchPage = lazy(() => import('../pages/launchPage/LaunchPage'));
 
 
 export const routeList: Array<RouteType> = [
 	{
-		path: '/',
+		path: ROUTE.HOME,
 		page: LazyHomePage
 	},
 	{
-		path: '/event/:id',
+		path: ROUTE.EVENTS,
 		page: LazyEventPage
 	},
 	{
-		path: '/rocket/:id',
+		path: ROUTE.ROCKETS,
 		page: LazyRocketPage
 	},
 	{
-		path: '/launch/:id',
+		path: ROUTE.LAUNCH,
 		page: LazyLaunchPage
 	},
 ];

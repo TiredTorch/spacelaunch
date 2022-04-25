@@ -3,7 +3,7 @@ import * as ReactDOMClient from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import App from './app/app';
+import App from './App/App';
 import theme from '../../../libs/shared/theme/src/lib/theme';
 import { store } from '@spacelaunch/redux/store';
 

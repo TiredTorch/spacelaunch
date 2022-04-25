@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { Route, Routes as RoutesWrapper } from 'react-router';
 import { routeList } from '../routeList';
 
-export function AppRoutes() {
+export const AppRoutes = () => {
 
 	useScrollToTop();
 	
@@ -22,6 +22,6 @@ export function AppRoutes() {
 			</RoutesWrapper>
 		</Suspense>
 	);
-}
+};
 
 export default AppRoutes;

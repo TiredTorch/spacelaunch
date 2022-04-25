@@ -3,6 +3,7 @@
   "projects": {
     "redux-store": "libs/redux/store",
     "shared-assets": "libs/shared/assets",
+    "shared-enums": "libs/shared/enums",
     "shared-hooks": "libs/shared/hooks",
     "shared-layout": "libs/shared/layout",
     "shared-theme": "libs/shared/theme",

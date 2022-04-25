@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { UpcomingEvents } from './homepageEventTypes';
-import { UpcomingLaunches } from './homepageLaunchTypes';
+import { UpcomingEvents } from './homepageEvent.types';
+import { UpcomingLaunches } from './homepageLaunch.types';
 
 export const homepageApi = createApi({
 	reducerPath: 'api/homepage',

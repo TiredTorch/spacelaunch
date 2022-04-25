@@ -5,7 +5,7 @@ import {
 } from 'libs/redux/store/src/lib/eventpage/eventpageApi';
 import { useParams } from 'react-router';
 
-export function EventPage() {
+export const EventPage = () => {
 	
 	const { id } = useParams();
 	const { data } = useGetEventQuery(`${id}`);
@@ -19,6 +19,6 @@ export function EventPage() {
 				bg: data?.launches[0].image
 			}}/>
 	);
-}
+};
 
 export default EventPage;

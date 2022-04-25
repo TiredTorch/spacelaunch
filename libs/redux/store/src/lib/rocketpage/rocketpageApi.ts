@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { Rocket } from './rocketpageTypes';
+import { Rocket } from './rocketpage.types';
 
 export const rocketpageApi = createApi({
 	reducerPath: 'api/rocket',

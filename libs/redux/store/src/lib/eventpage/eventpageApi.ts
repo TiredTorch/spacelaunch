@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { EventItem } from './eventpageTypes';
+import { EventItem } from './eventpage.types';
 
 export const eventpageApi = createApi({
 	reducerPath: 'api/event',
