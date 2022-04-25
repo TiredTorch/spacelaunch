@@ -1,6 +1,6 @@
 import { Box, styled, Typography } from '@mui/material';
-import Logo from '../common/logo/logo';
-import LogoImage from '../../../../../shared/assets/assets/logo/Logo.svg';
+import Logo from '../logo/logo';
+import LogoImage from '../../../../../../shared/assets/assets/logo/Logo.svg';
 
 
 const StyledBox = styled(Box)(() => ({

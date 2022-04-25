@@ -1,8 +1,8 @@
 import { AppBar, Box, Typography } from '@mui/material';
 import { styled } from '@mui/material';
 import { Link } from 'react-router-dom';
-import Logo from '../common/logo/logo';
-import LogoImg from '../../../../../shared/assets/assets/logo/Logo.svg';
+import Logo from '../logo/logo';
+import LogoImg from '../../../../../../shared/assets/assets/logo/Logo.svg';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {
