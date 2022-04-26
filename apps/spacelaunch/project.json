@@ -16,7 +16,9 @@
         "polyfills": "apps/spacelaunch/src/polyfills.ts",
         "tsConfig": "apps/spacelaunch/tsconfig.app.json",
         "assets": [
-          "apps/spacelaunch/src/assets"
+          "apps/spacelaunch/src/assets",
+          "apps/spacelaunch/src/manifest.json",
+          "apps/spacelaunch/src/sw.js"
         ],
         "styles": [],
         "scripts": [],
