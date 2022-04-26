@@ -39,12 +39,12 @@ export const LaunchSection = () => {
 						}
 					/>
 					<InfoString title={'Mission'} info={
-						data?.mission.type??'-'
+						data?.mission?.type??'-'
 					}/>
 					<Typography variant="h5" 
 						align="center" marginTop={'20px'} width={'100%'}
 						padding={{lg: '0 200px', md: '0 100px', xs: '0 100px'}}>
-						{data?.mission.description??'Not found'}
+						{data?.mission?.description??'Not found'}
 					</Typography>
 				</StyledStack>
 				<StyledStack>

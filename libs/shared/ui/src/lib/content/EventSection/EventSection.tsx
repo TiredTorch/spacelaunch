@@ -59,7 +59,7 @@ export const EventSection = () => {
 						</Typography>
 						<SubtitleBox 
 							title={
-								dayjs(data?.date).format('MMM. D, YYYY, H:m a')
+								dayjs(data?.date).format('MMM. D, YYYY, H:mm a')
 							??'Not found'}
 						/>
 						<InfoString 

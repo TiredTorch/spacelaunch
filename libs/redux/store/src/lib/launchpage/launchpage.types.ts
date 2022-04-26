@@ -479,7 +479,7 @@ export interface Launches {
       hashtag: string;
       launch_service_provider: LaunchServiceProvider;
       rocket: Rocket;
-      mission: Mission;
+      mission?: Mission;
       pad: Pad;
       infoURLs: InfoURL[];
       vidURLs?: VidURL[];

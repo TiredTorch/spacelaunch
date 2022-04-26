@@ -50,7 +50,7 @@ export const LaunchContent = () => {
 					<Timer 
 						time={
 							dayjs(data?.window_start)
-								.format('MMM. D, YYYY, H:m a')
+								.format('MMM. D, YYYY, H:mm a')
 						}
 					/>
 				</StyledListItem>

@@ -42,7 +42,9 @@ export const LaunchListItem = (props: LaunchListItemProps) => {
 			</Link>
 			<StyledSubtitleOverlay>
 				<SubtitleBox 
-					title={dayjs(props.dataTitle).format('MMM. D, YYYY, H:m a')}
+					title={
+						dayjs(props.dataTitle).format('MMM. D, YYYY, H:mm a')
+					}
 				/>
 			</StyledSubtitleOverlay>
 			<Link to={props.url} style={{

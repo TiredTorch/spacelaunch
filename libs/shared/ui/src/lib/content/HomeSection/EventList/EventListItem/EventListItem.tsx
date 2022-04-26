@@ -43,7 +43,7 @@ export const EventListItem = (props: EventListItemProps) => {
 			</Link>
       
 			<SubtitleBox 
-				title={dayjs(props.dataTitle).format('MMM. D, YYYY, H:m a')}
+				title={dayjs(props.dataTitle).format('MMM. D, YYYY, H:mm a')}
 			/>
 			<Link to={props.url} style={{
 				textDecoration: 'none',

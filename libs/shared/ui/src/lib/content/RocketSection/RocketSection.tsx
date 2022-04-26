@@ -43,7 +43,7 @@ export const RocketSection = () => {
 		},
 		{
 			title: 'Variant',
-			value: data?.variant ? data?.variant : '-'
+			value: data?.variant ?? '-'
 		},
 		{
 			title: 'Full name',
@@ -51,7 +51,7 @@ export const RocketSection = () => {
 		},
 		{
 			title: 'Alias',
-			value: data?.alias ? data?.alias : '-'
+			value: data?.alias??'-'
 		},
 	];
 	const specificationsDetails: Array<DetailListItemProps> = [
@@ -73,7 +73,7 @@ export const RocketSection = () => {
 		},
 		{
 			title: 'Fairing Diameter',
-			value: '5.2 m'
+			value: '-'
 		},
 		{
 			title: 'Launch Mass',
