@@ -1,3 +1,4 @@
+import { assets } from '@spacelaunch/shared/assets';
 import { render } from '@testing-library/react';
 
 import SpacelaunchLayout from './SpacelaunchLayout';
@@ -10,7 +11,7 @@ describe('SpacelaunchLayout', () => {
 				contentComponent={() => <></>} 
 				settings={{
 					hasHeaderLink: false,
-					bg: undefined
+					bg: assets.HomepageBG
 				}} />);
 		expect(baseElement).toBeTruthy();
 	});

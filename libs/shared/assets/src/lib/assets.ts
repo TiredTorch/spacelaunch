@@ -3,7 +3,7 @@ import Logo from '../../assets/logo/Logo.svg';
 import FamilyLogo from '../../assets/rocketDetails/family.svg';
 import PayloadLogo from '../../assets/rocketDetails/payload.svg';
 import SpecificationsLogo from '../../assets/rocketDetails/specifications.svg';
-import NotFoundPage from '../../assets/viewPage/404.png';
+import NotFoundPage from '../../assets/viewPage/404.svg';
 
 export const assets = {
 	HomepageBG: HomepageBG,
