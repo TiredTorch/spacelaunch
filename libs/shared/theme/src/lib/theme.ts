@@ -83,4 +83,4 @@ theme.components= {
 	}
 };
 
-export default theme;
+export { theme };

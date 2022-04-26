@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import App from './App/App';
-import theme from '../../../libs/shared/theme/src/lib/theme';
+import { theme } from '@spacelaunch/shared/theme';
 import { store } from '@spacelaunch/redux/store';
 import 'typeface-montserrat';
 
