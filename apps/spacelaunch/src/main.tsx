@@ -6,6 +6,7 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 import App from './App/App';
 import theme from '../../../libs/shared/theme/src/lib/theme';
 import { store } from '@spacelaunch/redux/store';
+import 'typeface-montserrat';
 
 const root = ReactDOMClient.createRoot(
   document.getElementById('root') as HTMLElement
