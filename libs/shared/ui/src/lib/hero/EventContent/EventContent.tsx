@@ -4,7 +4,7 @@ import {
 	useGetEventQuery 
 } from '@spacelaunch/redux/store';
 import { useParams } from 'react-router';
-import Button from '../../common/Button/Button';
+import { Button } from '@spacelaunch/shared/ui';
 import Loading from '../../common/Loading/Loading';
 import SubtitleBox from '../../common/SubtitleBox/SubtitleBox';
 

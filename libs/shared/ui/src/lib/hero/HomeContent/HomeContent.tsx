@@ -1,5 +1,5 @@
 import { ListItem, Stack, styled, Typography } from '@mui/material';
-import Button from '../../common/Button/Button';
+import { Button } from '@spacelaunch/shared/ui';
 
 const StyledStack = styled(Stack)(({ theme }) => ({
 	position: 'absolute',

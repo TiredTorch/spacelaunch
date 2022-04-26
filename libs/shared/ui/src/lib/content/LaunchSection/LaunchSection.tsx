@@ -1,5 +1,5 @@
 import { Stack, styled, Typography } from '@mui/material';
-import Button from '../../common/Button/Button';
+import { Button } from '@spacelaunch/shared/ui';
 import InfoString from '../../common/InfoString/InfoString';
 import { 
 	useGetLaunchQuery 
